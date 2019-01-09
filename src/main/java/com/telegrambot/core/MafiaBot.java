@@ -5,6 +5,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class MafiaBot extends TelegramLongPollingBot {
@@ -45,6 +46,10 @@ public class MafiaBot extends TelegramLongPollingBot {
 
     private void react(String text, int id) {
         switch (text) {
+            case "/nokill":
+                mafiaDecided = true;
+                checkReady();
+                break;
             case "/nacht":
                 if (!gameRunning) {
                     new BotMessage(-378548734, "Das Spiel läuft gar nicht!").send();
@@ -205,9 +210,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 break;
         }
             /*
-            TODO: Terrorist testen bei mehreren Leuten
-                  Amor und Drogendealer Problem lösen
-                  /deleterole implementieren
+            TODO: Amor und Drogendealer Problem lösen
                   Mafiosi kennen Drogendealer und Terrorist (und umgekehrt) über Command an- und ausschalten
                   Google Doc pflegen
                   Bot auf Server setzen
@@ -224,6 +227,16 @@ public class MafiaBot extends TelegramLongPollingBot {
             }
             text = text.replace("/register ", "");
             registerPlayer(text, id);
+        }
+
+        if (text.startsWith("/deleterole")) {
+            text = text.replace("/deleterole ", "");
+            if (!(availableRoles.contains(text))) {
+                new BotMessage(-378548734, "Diese Rolle ist gar nicht aktiv. Achte bitte auf eine korrekte Schreibweise!").send();
+                return;
+            }
+            activeRoles.remove(text);
+            new BotMessage(-378548734, text + " wurde von den Rollen entfernt!").send();
         }
 
         if (text.startsWith("/addrole")) {
@@ -395,10 +408,21 @@ public class MafiaBot extends TelegramLongPollingBot {
                 new BotMessage(id, "Diesen Spieler kenne ich gar nicht oder er ist schon tot. Probier es doch einfach nochmal!").send();
                 return;
             }
-            new BotMessage(-378548734, "Der Terrorist hat sich soeben hochgesprengt und er nimmt mit sich: " + terroredPlayer + " (" + getRoleByPlayerName(terroredPlayer) + ")");
+            new BotMessage(-378548734, "Der Terrorist hat sich soeben hochgesprengt und er nimmt mit sich: " + terroredPlayer + " (" + getRoleByPlayerName(terroredPlayer) + ")").send();
+            Iterator<Player> iterator = livingPlayers.iterator();
+            while(iterator.hasNext()){
+                Player s = iterator.next();
+                if(s.getPlayerName().equals(terroredPlayer) || s.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName())){
+                    iterator.remove();
+                    System.out.println("Ich habe grade " + s.getPlayerName() + " entfernt (hoffentlich)");
+                }
+
+            }
             for (Player player : livingPlayers) {
-                if (player.getPlayerName().equals(terroredPlayer) || player.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName())) {
+                System.out.println(player.getPlayerName());
+                if ((player.getPlayerName().equals(terroredPlayer)) || (player.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName()))) {
                     livingPlayers.remove(player);
+                    System.out.println("Ich habe grade " + player.getPlayerName() + " entfernt (hoffentlich)");
                 }
             }
         }

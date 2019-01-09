@@ -46,15 +46,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="208" column="53" selection-start-line="208" selection-start-column="53" selection-end-line="208" selection-end-column="53" />
+            <state relative-caret-position="370">
+              <caret line="212" column="53" selection-start-line="212" selection-start-column="53" selection-end-line="212" selection-end-column="53" />
               <folding>
-                <element signature="e#37957#37958#0" expanded="true" />
-                <element signature="e#38051#38052#0" expanded="true" />
-                <element signature="e#38426#38427#0" expanded="true" />
-                <element signature="e#38515#38516#0" expanded="true" />
-                <element signature="e#38604#38605#0" expanded="true" />
-                <element signature="e#38723#38724#0" expanded="true" />
+                <element signature="e#37992#37993#0" expanded="true" />
+                <element signature="e#38036#38037#0" expanded="true" />
+                <element signature="e#38080#38081#0" expanded="true" />
+                <element signature="e#38130#38131#0" expanded="true" />
+                <element signature="e#38471#38472#0" expanded="true" />
+                <element signature="e#38505#38506#0" expanded="true" />
+                <element signature="e#38557#38558#0" expanded="true" />
+                <element signature="e#38594#38595#0" expanded="true" />
+                <element signature="e#38646#38647#0" expanded="true" />
+                <element signature="e#38683#38684#0" expanded="true" />
+                <element signature="e#38732#38733#0" expanded="true" />
+                <element signature="e#38802#38803#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,7 +122,13 @@
       <find>/love</find>
       <find>checkready</find>
       <find>/terror</find>
+      <find>checkvictory</find>
+      <find>//</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -149,6 +161,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -241,8 +254,10 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="D:/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -364,7 +379,7 @@
       <workItem from="1546778494479" duration="7159000" />
       <workItem from="1546976523529" duration="8014000" />
       <workItem from="1547024623801" duration="7145000" />
-      <workItem from="1547059741047" duration="4635000" />
+      <workItem from="1547059741047" duration="8268000" />
     </task>
     <servers />
   </component>
@@ -395,7 +410,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82411000" />
+    <option name="totallyTimeSpent" value="86044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -420,7 +435,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -592,15 +607,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="208" column="53" selection-start-line="208" selection-start-column="53" selection-end-line="208" selection-end-column="53" />
+        <state relative-caret-position="370">
+          <caret line="212" column="53" selection-start-line="212" selection-start-column="53" selection-end-line="212" selection-end-column="53" />
           <folding>
-            <element signature="e#37957#37958#0" expanded="true" />
-            <element signature="e#38051#38052#0" expanded="true" />
-            <element signature="e#38426#38427#0" expanded="true" />
-            <element signature="e#38515#38516#0" expanded="true" />
-            <element signature="e#38604#38605#0" expanded="true" />
-            <element signature="e#38723#38724#0" expanded="true" />
+            <element signature="e#37992#37993#0" expanded="true" />
+            <element signature="e#38036#38037#0" expanded="true" />
+            <element signature="e#38080#38081#0" expanded="true" />
+            <element signature="e#38130#38131#0" expanded="true" />
+            <element signature="e#38471#38472#0" expanded="true" />
+            <element signature="e#38505#38506#0" expanded="true" />
+            <element signature="e#38557#38558#0" expanded="true" />
+            <element signature="e#38594#38595#0" expanded="true" />
+            <element signature="e#38646#38647#0" expanded="true" />
+            <element signature="e#38683#38684#0" expanded="true" />
+            <element signature="e#38732#38733#0" expanded="true" />
+            <element signature="e#38802#38803#0" expanded="true" />
           </folding>
         </state>
       </provider>
