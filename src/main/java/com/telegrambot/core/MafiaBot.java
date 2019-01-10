@@ -5,7 +5,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 public class MafiaBot extends TelegramLongPollingBot {
@@ -409,22 +408,14 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return;
             }
             new BotMessage(-378548734, "Der Terrorist hat sich soeben hochgesprengt und er nimmt mit sich: " + terroredPlayer + " (" + getRoleByPlayerName(terroredPlayer) + ")").send();
-            Iterator<Player> iterator = livingPlayers.iterator();
-            while(iterator.hasNext()){
-                Player s = iterator.next();
-                if(s.getPlayerName().equals(terroredPlayer) || s.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName())){
-                    iterator.remove();
-                    System.out.println("Ich habe grade " + s.getPlayerName() + " entfernt (hoffentlich)");
-                }
-
-            }
+            livingPlayers.removeIf(s -> s.getPlayerName().equals(terroredPlayer) || s.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName()));
             for (Player player : livingPlayers) {
                 System.out.println(player.getPlayerName());
                 if ((player.getPlayerName().equals(terroredPlayer)) || (player.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName()))) {
                     livingPlayers.remove(player);
-                    System.out.println("Ich habe grade " + player.getPlayerName() + " entfernt (hoffentlich)");
                 }
             }
+            checkVictory();
         }
 
         if (text.startsWith("/vote")) {

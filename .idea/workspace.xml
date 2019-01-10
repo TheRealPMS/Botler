@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="" />
+    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -46,22 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="212" column="53" selection-start-line="212" selection-start-column="53" selection-end-line="212" selection-end-column="53" />
-              <folding>
-                <element signature="e#37992#37993#0" expanded="true" />
-                <element signature="e#38036#38037#0" expanded="true" />
-                <element signature="e#38080#38081#0" expanded="true" />
-                <element signature="e#38130#38131#0" expanded="true" />
-                <element signature="e#38471#38472#0" expanded="true" />
-                <element signature="e#38505#38506#0" expanded="true" />
-                <element signature="e#38557#38558#0" expanded="true" />
-                <element signature="e#38594#38595#0" expanded="true" />
-                <element signature="e#38646#38647#0" expanded="true" />
-                <element signature="e#38683#38684#0" expanded="true" />
-                <element signature="e#38732#38733#0" expanded="true" />
-                <element signature="e#38802#38803#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="432">
+              <caret line="212" column="108" lean-forward="true" selection-start-line="212" selection-start-column="108" selection-end-line="212" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -69,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
+            <state relative-caret-position="476">
               <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding>
                 <element signature="e#511#512#0" expanded="true" />
@@ -84,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="119">
               <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -168,7 +156,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -245,6 +232,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,6 +368,7 @@
       <workItem from="1546976523529" duration="8014000" />
       <workItem from="1547024623801" duration="7145000" />
       <workItem from="1547059741047" duration="8268000" />
+      <workItem from="1547108146643" duration="722000" />
     </task>
     <servers />
   </component>
@@ -410,7 +399,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86044000" />
+    <option name="totallyTimeSpent" value="86766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -423,9 +412,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21108742" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21321961" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -554,6 +542,13 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/From.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Message.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Chat.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.telegram/telegrambots/4.1/ce37faceca166210ab9216d09d57f55f49141375/telegrambots-4.1-sources.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="304" selection-start-line="304" selection-end-line="304" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/BotMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -577,7 +572,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
+        <state relative-caret-position="476">
           <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
             <element signature="e#511#512#0" expanded="true" />
@@ -590,7 +585,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="119">
           <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -598,31 +593,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.telegram/telegrambots/4.1/ce37faceca166210ab9216d09d57f55f49141375/telegrambots-4.1-sources.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="304" selection-start-line="304" selection-end-line="304" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="212" column="53" selection-start-line="212" selection-start-column="53" selection-end-line="212" selection-end-column="53" />
-          <folding>
-            <element signature="e#37992#37993#0" expanded="true" />
-            <element signature="e#38036#38037#0" expanded="true" />
-            <element signature="e#38080#38081#0" expanded="true" />
-            <element signature="e#38130#38131#0" expanded="true" />
-            <element signature="e#38471#38472#0" expanded="true" />
-            <element signature="e#38505#38506#0" expanded="true" />
-            <element signature="e#38557#38558#0" expanded="true" />
-            <element signature="e#38594#38595#0" expanded="true" />
-            <element signature="e#38646#38647#0" expanded="true" />
-            <element signature="e#38683#38684#0" expanded="true" />
-            <element signature="e#38732#38733#0" expanded="true" />
-            <element signature="e#38802#38803#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="432">
+          <caret line="212" column="108" lean-forward="true" selection-start-line="212" selection-start-column="108" selection-end-line="212" selection-end-column="108" />
         </state>
       </provider>
     </entry>
