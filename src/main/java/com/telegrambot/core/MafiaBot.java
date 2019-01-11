@@ -875,7 +875,7 @@ public class MafiaBot extends TelegramLongPollingBot {
     }
 
     private void checkReady() {
-        if ((leibwaechterDecided || (!(livingPlayers.contains(getPlayerByRole("Leibwächter"))))) && (detektivDecided || (!(livingPlayers.contains(getPlayerByRole("Detektiv"))))) && (amorHasDecided || (!(livingPlayers.contains(getPlayerByRole("Amor"))))) && ((hexeDecidedSaved && hexeDecidedPoisoned) || (!(livingPlayers.contains(getPlayerByRole("Hexe"))))) && mafiaDecided && (drogendealerDecided || (!(livingPlayers.contains(getPlayerByRole("Drogendealer")))))) {
+        if ((leibwaechterDecided || (!(livingPlayers.contains(getPlayerByRole("Leibwächter"))))) && (detektivDecided || (!(livingPlayers.contains(getPlayerByRole("Detektiv"))))) && (amorHasDecided || (!(livingPlayers.contains(getPlayerByRole("Amor"))))) && ((hexeDecidedSaved && hexeDecidedPoisoned) || (!(livingPlayers.contains(getPlayerByRole("Hexe"))))) && (mafiaDecided || (!(livingPlayers.contains(getPlayerByRole("Mafia"))))) && (drogendealerDecided || (!(livingPlayers.contains(getPlayerByRole("Drogendealer")))))) {
             tag();
         }
     }

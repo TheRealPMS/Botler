@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="" />
+    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -46,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="207" column="31" lean-forward="true" selection-start-line="207" selection-start-column="31" selection-end-line="207" selection-end-column="31" />
+            <state relative-caret-position="291">
+              <caret line="877" column="431" selection-start-line="877" selection-start-column="431" selection-end-line="877" selection-end-column="431" />
             </state>
           </provider>
         </entry>
@@ -97,7 +100,6 @@
       <find>checkready()</find>
       <find>nacht</find>
       <find>nacht()</find>
-      <find>/trip</find>
       <find>villager</find>
       <find>deine kum</find>
       <find>checkvi</find>
@@ -110,6 +112,8 @@
       <find>/terror</find>
       <find>checkvictory</find>
       <find>//</find>
+      <find>trip</find>
+      <find>/trip</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,7 +157,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -231,6 +234,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,7 +374,17 @@
       <workItem from="1547059741047" duration="8268000" />
       <workItem from="1547108146643" duration="722000" />
       <workItem from="1547152977255" duration="39000" />
+      <workItem from="1547153073114" duration="470000" />
+      <workItem from="1547211266219" duration="234000" />
     </task>
+    <task id="LOCAL-00001" summary="checkVictory after terror">
+      <created>1547153259135</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1547153259135</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -400,7 +414,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86805000" />
+    <option name="totallyTimeSpent" value="87509000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,7 +429,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2196162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -437,7 +451,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32936078" />
       <window_info anchor="bottom" id="Duplicate detector" order="15" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -490,6 +504,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="checkVictory after terror" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkVictory after terror" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
@@ -595,10 +613,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/function/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="207" column="31" lean-forward="true" selection-start-line="207" selection-start-column="31" selection-end-line="207" selection-end-column="31" />
+        <state relative-caret-position="291">
+          <caret line="877" column="431" selection-start-line="877" selection-start-column="431" selection-end-line="877" selection-end-column="431" />
         </state>
       </provider>
     </entry>
