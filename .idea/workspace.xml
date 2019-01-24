@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="" />
+    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/telegrambot/core/BotMessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/telegrambot/core/BotMessageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/telegrambot/net/HttpClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/telegrambot/net/HttpClientTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -21,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/BotMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="323">
               <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="e#547#548#0" expanded="true" />
@@ -34,8 +40,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="875" lean-forward="true" selection-start-line="875" selection-end-line="875" />
+            <state relative-caret-position="366">
+              <caret line="769" column="36" selection-start-line="769" selection-start-column="36" selection-end-line="769" selection-end-column="36" />
+              <folding>
+                <element signature="e#38737#38738#0" expanded="true" />
+                <element signature="e#38781#38782#0" expanded="true" />
+                <element signature="e#38825#38826#0" expanded="true" />
+                <element signature="e#38875#38876#0" expanded="true" />
+                <element signature="e#39216#39217#0" expanded="true" />
+                <element signature="e#39250#39251#0" expanded="true" />
+                <element signature="e#39302#39303#0" expanded="true" />
+                <element signature="e#39339#39340#0" expanded="true" />
+                <element signature="e#39391#39392#0" expanded="true" />
+                <element signature="e#39428#39429#0" expanded="true" />
+                <element signature="e#39477#39478#0" expanded="true" />
+                <element signature="e#39547#39548#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,12 +114,19 @@
       <find>Es ist Nacht! Jeder schreibt mir jetzt bitte privat</find>
       <find>/love</find>
       <find>checkready</find>
-      <find>/terror</find>
       <find>checkvictory</find>
       <find>//</find>
+      <find>-378548734</find>
+      <find>terror</find>
+      <find>/terror</find>
+      <find>mafiaDecided</find>
+      <find>callHexe</find>
       <find>trip</find>
       <find>/trip</find>
     </findStrings>
+    <replaceStrings>
+      <replace>-364537563</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -361,6 +388,8 @@
       <workItem from="1547152977255" duration="39000" />
       <workItem from="1547153073114" duration="470000" />
       <workItem from="1547211266219" duration="414000" />
+      <workItem from="1548173613131" duration="3248000" />
+      <workItem from="1548327869927" duration="254000" />
     </task>
     <task id="LOCAL-00001" summary="checkVictory after terror">
       <created>1547153259135</created>
@@ -406,7 +435,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87689000" />
+    <option name="totallyTimeSpent" value="91191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,8 +448,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2196162" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2238806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -554,29 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -603,7 +610,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/BotMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="323">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
             <element signature="e#547#548#0" expanded="true" />
@@ -612,10 +619,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="875" lean-forward="true" selection-start-line="875" selection-end-line="875" />
+        <state relative-caret-position="366">
+          <caret line="769" column="36" selection-start-line="769" selection-start-column="36" selection-end-line="769" selection-end-column="36" />
+          <folding>
+            <element signature="e#38737#38738#0" expanded="true" />
+            <element signature="e#38781#38782#0" expanded="true" />
+            <element signature="e#38825#38826#0" expanded="true" />
+            <element signature="e#38875#38876#0" expanded="true" />
+            <element signature="e#39216#39217#0" expanded="true" />
+            <element signature="e#39250#39251#0" expanded="true" />
+            <element signature="e#39302#39303#0" expanded="true" />
+            <element signature="e#39339#39340#0" expanded="true" />
+            <element signature="e#39391#39392#0" expanded="true" />
+            <element signature="e#39428#39429#0" expanded="true" />
+            <element signature="e#39477#39478#0" expanded="true" />
+            <element signature="e#39547#39548#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

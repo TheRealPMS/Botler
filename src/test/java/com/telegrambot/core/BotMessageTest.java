@@ -8,6 +8,6 @@ public class BotMessageTest {
 
     @Test
     public void send() {
-        new BotMessage(-378548734, "Was geht ab?").send();
+        new BotMessage(-364537563, "Was geht ab?").send();
     }
 }
