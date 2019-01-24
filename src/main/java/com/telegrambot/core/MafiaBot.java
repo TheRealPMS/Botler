@@ -774,6 +774,10 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (tmp.getTodestrank()) {
             new BotMessage(tmp.getPlayerId(), "Falls du diese Nacht jemanden töten möchtest, nutze /poison NAME, falls du dies NICHT tun willst, nutze /nopoison").send();
         }
+        if(!tmp.getTodestrank() && !tmp.getLebenstrank()){
+            hexeDecidedSaved = true;
+            hexeDecidedPoisoned = true;
+        }
     }
 
     private void vorNacht() {
@@ -806,10 +810,12 @@ public class MafiaBot extends TelegramLongPollingBot {
                     break;
                 case "Hexe":
                     if (!(livingPlayer.getLebenstrank())) {
+                        hexeDecidedSaved = true;
                         if (livingPlayer.getTodestrank()) {
-                            new BotMessage(livingPlayer.getPlayerId(), "Wen möchtest du diese Nacht töten? Nutze dafür den Command /poison NAME").send();
+                            new BotMessage(livingPlayer.getPlayerId(), "Falls du diese Nacht jemanden töten möchtest, nutze /poison NAME, falls du dies NICHT tun willst, nutze /nopoison").send();
                         } else {
                             new BotMessage(livingPlayer.getPlayerId(), "Du hast leider keine Tränke mehr!").send();
+                            hexeDecidedPoisoned = true;
                         }
                     } else {
                         if(!hexeDecidedSaved) {
