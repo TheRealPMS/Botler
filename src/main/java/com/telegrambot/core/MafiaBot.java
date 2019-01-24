@@ -777,6 +777,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         if(!tmp.getTodestrank() && !tmp.getLebenstrank()){
             hexeDecidedSaved = true;
             hexeDecidedPoisoned = true;
+            checkReady();
         }
     }
 
