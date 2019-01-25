@@ -211,6 +211,8 @@ public class MafiaBot extends TelegramLongPollingBot {
             /*
             TODO: Amor und Drogendealer Problem lösen
                   Mafiosi kennen Drogendealer und Terrorist (und umgekehrt) über Command an- und ausschalten
+                  Bürgermeister für Unentschieden
+                  Nacht nach Abstimmung?
                   Google Doc pflegen
                   Bot auf Server setzen
              */
@@ -419,14 +421,14 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (text.startsWith("/vote")) {
             if (dayLogicCheck(id)) return;
             if (getPlayerById(id).getHasVoted()) {
-                new BotMessage(id, "Du hast schon abgestimmt für " + getPlayerById(id).getHasVotedFor()).send();
+                new BotMessage(-364537563, "Du hast schon abgestimmt für " + getPlayerById(id).getHasVotedFor()).send();
                 return;
             }
             text = text.replace("/vote ", "");
             for (Player livingPlayer : livingPlayers) {
                 if (livingPlayer.getPlayerName().equals(text)) {
                     if (!(nominated.contains(livingPlayer.getPlayerName()))) {
-                        new BotMessage(id, "Der Spieler ist gar nicht nominiert oder ich kenne ihn gar nicht. Benutze dafür bitte /nominate NAME!").send();
+                        new BotMessage(-364537563, "Der Spieler ist gar nicht nominiert oder ich kenne ihn gar nicht. Benutze dafür bitte /nominate NAME!").send();
                         return;
                     }
                     getPlayerById(id).setHasVotedFor(livingPlayer.getPlayerName());
@@ -608,7 +610,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         for (Player tmp : players) {
             tmp.resetVotesFor();
         }
-        nacht();
+        vorNacht();
     }
 
     private void removePlayer(Player player) {
