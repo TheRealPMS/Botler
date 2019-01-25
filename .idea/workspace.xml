@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -33,15 +32,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="641" column="68" selection-start-line="641" selection-start-column="68" selection-end-line="641" selection-end-column="68" />
+            <state relative-caret-position="368">
+              <caret line="235" column="93" selection-start-line="235" selection-start-column="93" selection-end-line="235" selection-end-column="93" />
               <folding>
-                <element signature="e#42863#42864#0" expanded="true" />
-                <element signature="e#42957#42958#0" expanded="true" />
-                <element signature="e#43332#43333#0" expanded="true" />
-                <element signature="e#43421#43422#0" expanded="true" />
-                <element signature="e#43510#43511#0" expanded="true" />
-                <element signature="e#43629#43630#0" expanded="true" />
+                <element signature="e#42870#42871#0" expanded="true" />
+                <element signature="e#42964#42965#0" expanded="true" />
+                <element signature="e#43339#43340#0" expanded="true" />
+                <element signature="e#43428#43429#0" expanded="true" />
+                <element signature="e#43517#43518#0" expanded="true" />
+                <element signature="e#43636#43637#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,7 +201,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548431223675" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548431265062" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -343,7 +342,7 @@
       <workItem from="1547211266219" duration="414000" />
       <workItem from="1548173613131" duration="3248000" />
       <workItem from="1548327869927" duration="1970000" />
-      <workItem from="1548424451157" duration="6634000" />
+      <workItem from="1548424451157" duration="6820000" />
     </task>
     <task id="LOCAL-00001" summary="checkVictory after terror">
       <created>1547153259135</created>
@@ -401,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548428414864</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Replaced all have voted with enough have voted check">
+      <created>1548431272843</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1548431272843</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -431,7 +437,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105493000" />
+    <option name="totallyTimeSpent" value="105679000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -444,7 +450,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25586355" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -456,7 +461,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -531,7 +536,8 @@
     <MESSAGE value="fixed bugs and added a few" />
     <MESSAGE value="Added Reset of all decisions" />
     <MESSAGE value="Doesn't have to be static tho" />
-    <option name="LAST_COMMIT_MESSAGE" value="Doesn't have to be static tho" />
+    <MESSAGE value="Replaced all have voted with enough have voted check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replaced all have voted with enough have voted check" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/config/VideoSearchBotConfig.java" />
@@ -648,15 +654,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="641" column="68" selection-start-line="641" selection-start-column="68" selection-end-line="641" selection-end-column="68" />
+        <state relative-caret-position="368">
+          <caret line="235" column="93" selection-start-line="235" selection-start-column="93" selection-end-line="235" selection-end-column="93" />
           <folding>
-            <element signature="e#42863#42864#0" expanded="true" />
-            <element signature="e#42957#42958#0" expanded="true" />
-            <element signature="e#43332#43333#0" expanded="true" />
-            <element signature="e#43421#43422#0" expanded="true" />
-            <element signature="e#43510#43511#0" expanded="true" />
-            <element signature="e#43629#43630#0" expanded="true" />
+            <element signature="e#42870#42871#0" expanded="true" />
+            <element signature="e#42964#42965#0" expanded="true" />
+            <element signature="e#43339#43340#0" expanded="true" />
+            <element signature="e#43428#43429#0" expanded="true" />
+            <element signature="e#43517#43518#0" expanded="true" />
+            <element signature="e#43636#43637#0" expanded="true" />
           </folding>
         </state>
       </provider>
