@@ -11,7 +11,10 @@ class Player {
     private int playerId;
     private Boolean hasVoted = false;
     private String hasVotedFor = "";
+    private Boolean hasVotedMajor = false;
+    private String hasVotedMajorFor = "";
     private int votesFor;
+    private int majorVotesFor;
 
     Player(String name, int id) {
         this.playerName = name;
@@ -26,8 +29,36 @@ class Player {
         this.votesFor++;
     }
 
+    void incrVotesMajorFor() {
+        this.majorVotesFor++;
+    }
+
+    int getMajorVotesFor() {
+        return majorVotesFor;
+    }
+
+    void resetMajorVotesFor() {
+        this.majorVotesFor = 0;
+    }
+
     void resetVotesFor() {
         this.votesFor = 0;
+    }
+
+    Boolean getHasVotedMajor() {
+        return hasVotedMajor;
+    }
+
+    String getHasVotedMajorFor() {
+        return hasVotedMajorFor;
+    }
+
+    void setHasVotedMajor(Boolean hasVotedMajor) {
+        this.hasVotedMajor = hasVotedMajor;
+    }
+
+    void setHasVotedMajorFor(String hasVotedMajorFor) {
+        this.hasVotedMajorFor = hasVotedMajorFor;
     }
 
     Boolean getHasVoted() {
@@ -42,12 +73,12 @@ class Player {
         return votesFor;
     }
 
-    void setLebenstrank(Boolean lebenstrank) {
-        this.lebenstrank = lebenstrank;
+    void setLebenstrank() {
+        this.lebenstrank = false;
     }
 
-    void setTodestrank(Boolean todestrank) {
-        this.todestrank = todestrank;
+    void setTodestrank() {
+        this.todestrank = false;
     }
 
     void setHasVoted(Boolean hasVoted) {
