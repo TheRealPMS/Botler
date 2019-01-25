@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MafiaBot extends TelegramLongPollingBot {
 
-    static private int groupID = -319166185;
+    private int groupID = -319166185;
     private ArrayList<Player> players = new ArrayList<>();
     private ArrayList<Player> livingPlayers = new ArrayList<>();
     private ArrayList<String> activeRoles = new ArrayList<>();
