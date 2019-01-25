@@ -39,7 +39,6 @@ public class MafiaBot extends TelegramLongPollingBot {
     private Boolean informTerrorist = false;
     private Boolean firstNight = true;
 
-
     @Override
     public void onUpdateReceived(Update update) {
         String text = update.getMessage().getText();
@@ -234,10 +233,8 @@ public class MafiaBot extends TelegramLongPollingBot {
         }
             /*
             TODO: Amor und Drogendealer Problem lösen
-                  Mafiosi kennen Drogendealer und Terrorist (und umgekehrt) über Command an- und ausschalten testen
-                  Abstimmung ist am Tag schon vorbei, wenn die Mehrheit abgestimmt hat
+                  Abstimmung ist am Tag schon vorbei, wenn die Mehrheit abgestimmt hat testen
                   Bürgermeister für Unentschieden
-                  Nacht nach Abstimmung testen
                   Google Doc pflegen
                   Bot auf Server setzen
              */
@@ -471,7 +468,7 @@ public class MafiaBot extends TelegramLongPollingBot {
             }
             new BotMessage(groupID, getPlayerById(id).getPlayerName() + " hat soeben abgestimmt für: " + getPlayerById(id).getHasVotedFor()).send();
             getPlayerByName(getPlayerById(id).getHasVotedFor()).incrVotesFor();
-            checkAllHaveVoted();
+            checkEnoughHaveVoted();
         }
 
         if (text.startsWith("/nominate")) {
@@ -613,28 +610,37 @@ public class MafiaBot extends TelegramLongPollingBot {
         return false;
     }
 
-    private void checkAllHaveVoted() {
+    private void checkEnoughHaveVoted() {
+        int noVoteCount = 0;
+        int secondMostVoted;
+        ArrayList<Integer> voteNumbers = new ArrayList<>();
+
         for (Player livingPlayer : livingPlayers) {
             if (livingPlayer.getHasVotedFor().isEmpty()) {
-                return;
+                noVoteCount++;
             }
+            voteNumbers.add(livingPlayer.getVotesFor());
         }
-        summarizeDay();
+        voteNumbers.sort(Collections.reverseOrder());
+        voteNumbers.remove(0);
+        secondMostVoted = voteNumbers.get(0);
+        Player mostVotedPlayer = getMostVotedPlayer();
+        if ((mostVotedPlayer.getVotesFor() - secondMostVoted) > noVoteCount) {
+            summarizeDay();
+        }
     }
 
     private void summarizeDay() {
-        Player player = getPlayerByName(nominated.get(0));
-        for (String nominate : nominated) {
-            if (getPlayerByName(nominate).getVotesFor() > player.getVotesFor()) {
-                player = getPlayerByName(nominate);
-            }
-        }
-        StringBuilder nominates = new StringBuilder("Alle im Dorf haben abgestimmt. Die Nominierten und Stimmen im Überblick: \n");
+        Player player = getMostVotedPlayer();
+        StringBuilder nominates = new StringBuilder("Die Abstimmung ist entschiedeen. Die Nominierten und Stimmen im Überblick: \n");
         for (String nominate : nominated) {
             nominates.append(nominate).append(": ").append(getPlayerByName(nominate).getVotesFor()).append("\n");
         }
         new BotMessage(groupID, nominates.toString()).send();
         new BotMessage(groupID, "Getötet wird " + player.getPlayerName() + " (" + player.getRole() + ")").send();
+        if(!badGuys.contains(player)){
+            new BotMessage(groupID, "Könnt ihr eigentlich irgendwas?").send();
+        }
         removePlayer(player);
         if (livingPlayers.isEmpty()) {
             return;
@@ -644,6 +650,16 @@ public class MafiaBot extends TelegramLongPollingBot {
             tmp.resetVotesFor();
         }
         vorNacht();
+    }
+
+    private Player getMostVotedPlayer() {
+        Player player = getPlayerByName(nominated.get(0));
+        for (String nominate : nominated) {
+            if (getPlayerByName(nominate).getVotesFor() > player.getVotesFor()) {
+                player = getPlayerByName(nominate);
+            }
+        }
+        return player;
     }
 
     private void removePlayer(Player player) {
