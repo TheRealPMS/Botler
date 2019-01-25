@@ -34,6 +34,8 @@ public class MafiaBot extends TelegramLongPollingBot {
     private Boolean drogendealerDecided = false;
     private Boolean daytime = false; //false ist Tag, true ist Nacht
     private Boolean gameRunning = false;
+    private Boolean informDrogendealer = false;
+    private Boolean informTerrorist = false;
 
 
     @Override
@@ -89,6 +91,22 @@ public class MafiaBot extends TelegramLongPollingBot {
                 newGame();
                 break;
 
+            case "/informdrogendealer":
+                informDrogendealer ^= true;
+                if(informDrogendealer){
+                    new BotMessage(-364537563, "Der Drogendealer wird ab dem nächsten Spiel informiert, wer die Mafiosi sind!").send();
+                } else{
+                    new BotMessage(-364537563, "Der Drogendealer wird ab dem nächsten Spiel NICHT mehr informiert, wer die Mafiosi sind!").send();
+                }
+                break;
+            case "/informterrorist":
+                informTerrorist ^= true;
+                if(informTerrorist){
+                    new BotMessage(-364537563, "Der Terrorist wird ab dem nächsten Spiel informiert, wer die Mafiosi sind!").send();
+                } else{
+                    new BotMessage(-364537563, "Der Terrorist wird ab dem nächsten Spiel NICHT mehr informiert, wer die Mafiosi sind!").send();
+                }
+                break;
             case "/getnominated":
                 StringBuilder nominates = new StringBuilder();
                 for (String nominate : nominated) {
@@ -212,7 +230,7 @@ public class MafiaBot extends TelegramLongPollingBot {
             TODO: Amor und Drogendealer Problem lösen
                   Mafiosi kennen Drogendealer und Terrorist (und umgekehrt) über Command an- und ausschalten
                   Bürgermeister für Unentschieden
-                  Nacht nach Abstimmung?
+                  Nacht nach Abstimmung testen
                   Google Doc pflegen
                   Bot auf Server setzen
              */
@@ -776,7 +794,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (tmp.getTodestrank()) {
             new BotMessage(tmp.getPlayerId(), "Falls du diese Nacht jemanden töten möchtest, nutze /poison NAME, falls du dies NICHT tun willst, nutze /nopoison").send();
         }
-        if(!tmp.getTodestrank() && !tmp.getLebenstrank()){
+        if (!tmp.getTodestrank() && !tmp.getLebenstrank()) {
             hexeDecidedSaved = true;
             hexeDecidedPoisoned = true;
             checkReady();
@@ -821,7 +839,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                             hexeDecidedPoisoned = true;
                         }
                     } else {
-                        if(!hexeDecidedSaved) {
+                        if (!hexeDecidedSaved) {
                             new BotMessage(livingPlayer.getPlayerId(), "Ich werde dich informieren, wenn die Mafia ein Opfer gefunden hat!").send();
                         }
                     }
