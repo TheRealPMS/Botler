@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="">
+    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="Added Reset of all decisions">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/telegrambot/core/BotMessageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/telegrambot/core/UpdateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/telegrambot/net/HttpClientTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -21,16 +28,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Botler.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -42,14 +39,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="855" column="9" selection-start-line="855" selection-start-column="9" selection-end-line="855" selection-end-column="9" />
+            <state relative-caret-position="204">
+              <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
               <folding>
+                <element signature="e#42318#42319#0" expanded="true" />
                 <element signature="e#42362#42363#0" expanded="true" />
+                <element signature="e#42406#42407#0" expanded="true" />
                 <element signature="e#42456#42457#0" expanded="true" />
+                <element signature="e#42797#42798#0" expanded="true" />
                 <element signature="e#42831#42832#0" expanded="true" />
+                <element signature="e#42883#42884#0" expanded="true" />
                 <element signature="e#42920#42921#0" expanded="true" />
+                <element signature="e#42972#42973#0" expanded="true" />
                 <element signature="e#43009#43010#0" expanded="true" />
+                <element signature="e#43058#43059#0" expanded="true" />
                 <element signature="e#43128#43129#0" expanded="true" />
               </folding>
             </state>
@@ -68,10 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nacht</find>
-      <find>villager</find>
-      <find>deine kum</find>
-      <find>checkvi</find>
       <find>vornacht</find>
       <find>Es ist Nacht! Jeder schreibt</find>
       <find>Alle Dorfbewohner sind</find>
@@ -89,7 +88,6 @@
       <find>callHexe</find>
       <find>/trip</find>
       <find>erste</find>
-      <find>nacht()</find>
       <find>StringB</find>
       <find>wen m</find>
       <find>wen möchtest du verlieben</find>
@@ -98,9 +96,15 @@
       <find>livingplayers</find>
       <find>checkReady</find>
       <find>system</find>
+      <find>tag()</find>
+      <find>-364537563</find>
+      <find>reset()</find>
+      <find>nacht()</find>
+      <find>tag</find>
     </findStrings>
     <replaceStrings>
       <replace>-364537563</replace>
+      <replace>groupID</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -148,43 +152,56 @@
         <subPane>
           <expand>
             <path>
-              <item name="Botler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Botler" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="Botler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Botler" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Botler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Botler" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="Botler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Botler" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Botler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Botler" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="telegrambot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Botler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Botler" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="telegrambot" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="MafiaBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MafiaBot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -197,7 +214,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548412484468" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548428191999" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -276,6 +293,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.telegrambot.core" />
       <option name="MAIN_CLASS_NAME" value="com.telegrambot.core.BotMessageTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -290,6 +308,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.telegrambot.net" />
       <option name="MAIN_CLASS_NAME" value="com.telegrambot.net.HttpClientTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -336,6 +355,7 @@
       <workItem from="1547211266219" duration="414000" />
       <workItem from="1548173613131" duration="3248000" />
       <workItem from="1548327869927" duration="1970000" />
+      <workItem from="1548424451157" duration="3735000" />
     </task>
     <task id="LOCAL-00001" summary="checkVictory after terror">
       <created>1547153259135</created>
@@ -409,7 +429,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98859000" />
+    <option name="totallyTimeSpent" value="102594000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -421,10 +441,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25586355" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -434,7 +453,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -507,7 +526,8 @@
     <MESSAGE value="Maybe I broke callHexe now, idk" />
     <MESSAGE value="informDrogendealer and informTerrorist" />
     <MESSAGE value="fixed bugs and added a few" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs and added a few" />
+    <MESSAGE value="Added Reset of all decisions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Reset of all decisions" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/config/VideoSearchBotConfig.java" />
@@ -532,21 +552,6 @@
           <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/telegrambot/core/BotMessageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#154#155#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/From.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Message.java" />
@@ -600,13 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3876">
@@ -619,16 +617,47 @@
     <entry file="file://$PROJECT_DIR$/out/production/classes/com/telegrambot/core/BotMessage.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Botler.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telegrambot/core/BotMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="855" column="9" selection-start-line="855" selection-start-column="9" selection-end-line="855" selection-end-column="9" />
+        <state relative-caret-position="204">
+          <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
           <folding>
+            <element signature="e#42318#42319#0" expanded="true" />
             <element signature="e#42362#42363#0" expanded="true" />
+            <element signature="e#42406#42407#0" expanded="true" />
             <element signature="e#42456#42457#0" expanded="true" />
+            <element signature="e#42797#42798#0" expanded="true" />
             <element signature="e#42831#42832#0" expanded="true" />
+            <element signature="e#42883#42884#0" expanded="true" />
             <element signature="e#42920#42921#0" expanded="true" />
+            <element signature="e#42972#42973#0" expanded="true" />
             <element signature="e#43009#43010#0" expanded="true" />
+            <element signature="e#43058#43059#0" expanded="true" />
             <element signature="e#43128#43129#0" expanded="true" />
           </folding>
         </state>

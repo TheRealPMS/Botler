@@ -9,6 +9,7 @@ import java.util.List;
 
 public class MafiaBot extends TelegramLongPollingBot {
 
+    static private int groupID = -319166185;
     private ArrayList<Player> players = new ArrayList<>();
     private ArrayList<Player> livingPlayers = new ArrayList<>();
     private ArrayList<String> activeRoles = new ArrayList<>();
@@ -54,7 +55,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 break;
             case "/nacht":
                 if (!gameRunning) {
-                    new BotMessage(-364537563, "Das Spiel läuft gar nicht!").send();
+                    new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                     return;
                 }
                 nacht();
@@ -62,34 +63,34 @@ public class MafiaBot extends TelegramLongPollingBot {
 
             case "/tag":
                 if (!gameRunning) {
-                    new BotMessage(-364537563, "Das Spiel läuft gar nicht!").send();
+                    new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                     return;
                 }
                 tag();
                 break;
 
             case "/active":
-                new BotMessage(-364537563, getActiveRoles().toString()).send();
+                new BotMessage(groupID, getActiveRoles().toString()).send();
                 break;
             case "/resetpunkte":
-                new BotMessage(-364537563, "Alle Punkte wurden zurückgesetzt!").send();
+                new BotMessage(groupID, "Alle Punkte wurden zurückgesetzt!").send();
                 for (Player player : players) {
                     player.resetPunkte();
                 }
                 break;
             case "/roles":
-                new BotMessage(-364537563, getAvailableRoles().toString()).send();
+                new BotMessage(groupID, getAvailableRoles().toString()).send();
                 break;
             case "/players":
-                new BotMessage(-364537563, getPlayers().toString()).send();
+                new BotMessage(groupID, getPlayers().toString()).send();
                 break;
 
             case "/living":
                 if (!gameRunning) {
-                    new BotMessage(-364537563, "Das Spiel läuft gar nicht!").send();
+                    new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                     return;
                 }
-                new BotMessage(-364537563, getLivingPlayers().toString()).send();
+                new BotMessage(groupID, getLivingPlayers().toString()).send();
                 break;
 
             case "/newgame":
@@ -99,17 +100,17 @@ public class MafiaBot extends TelegramLongPollingBot {
             case "/informdrogendealer":
                 informDrogendealer ^= true;
                 if (informDrogendealer) {
-                    new BotMessage(-364537563, "Der Drogendealer wird ab dem nächsten Spiel informiert, wer die Mafiosi sind!").send();
+                    new BotMessage(groupID, "Der Drogendealer wird ab dem nächsten Spiel informiert, wer die Mafiosi sind!").send();
                 } else {
-                    new BotMessage(-364537563, "Der Drogendealer wird ab dem nächsten Spiel NICHT mehr informiert, wer die Mafiosi sind!").send();
+                    new BotMessage(groupID, "Der Drogendealer wird ab dem nächsten Spiel NICHT mehr informiert, wer die Mafiosi sind!").send();
                 }
                 break;
             case "/informterrorist":
                 informTerrorist ^= true;
                 if (informTerrorist) {
-                    new BotMessage(-364537563, "Der Terrorist wird ab dem nächsten Spiel informiert, wer die Mafiosi sind!").send();
+                    new BotMessage(groupID, "Der Terrorist wird ab dem nächsten Spiel informiert, wer die Mafiosi sind!").send();
                 } else {
-                    new BotMessage(-364537563, "Der Terrorist wird ab dem nächsten Spiel NICHT mehr informiert, wer die Mafiosi sind!").send();
+                    new BotMessage(groupID, "Der Terrorist wird ab dem nächsten Spiel NICHT mehr informiert, wer die Mafiosi sind!").send();
                 }
                 break;
             case "/getnominated":
@@ -117,15 +118,15 @@ public class MafiaBot extends TelegramLongPollingBot {
                 for (String nominate : nominated) {
                     nominates.append(nominate).append(": ").append(getPlayerByName(nominate).getVotesFor()).append("\n");
                 }
-                new BotMessage(-364537563, "Das sind alle bisher Nominierten und die Zahl der bisher für sie abgegebenen Stimmen: \n" + nominates.toString()).send();
+                new BotMessage(groupID, "Das sind alle bisher Nominierten und die Zahl der bisher für sie abgegebenen Stimmen: \n" + nominates.toString()).send();
                 break;
 
             case "/cancelgame":
                 if (!gameRunning) {
-                    new BotMessage(-364537563, "Das Spiel läuft gar nicht!").send();
+                    new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                     return;
                 }
-                new BotMessage(-364537563, getPlayerById(id).getPlayerName() + " hat soeben das Spiel abgebrochen. Alles wurde zurückgesetzt!").send();
+                new BotMessage(groupID, getPlayerById(id).getPlayerName() + " hat soeben das Spiel abgebrochen. Alles wurde zurückgesetzt!").send();
                 reset();
                 break;
 
@@ -134,16 +135,16 @@ public class MafiaBot extends TelegramLongPollingBot {
                 for (Player player : players) {
                     tmp.append(player.getPlayerName()).append(": ").append(player.getPunkte()).append("\n");
                 }
-                new BotMessage(-364537563, tmp.toString()).send();
+                new BotMessage(groupID, tmp.toString()).send();
                 break;
 
             case "/whodead":
                 if (!gameRunning) {
-                    new BotMessage(-364537563, "Das Spiel läuft gar nicht!").send();
+                    new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                     return;
                 }
                 if (livingPlayers.size() == players.size()) {
-                    new BotMessage(-364537563, "Es gibt diese Runde noch gar keine Toten!").send();
+                    new BotMessage(groupID, "Es gibt diese Runde noch gar keine Toten!").send();
                     return;
                 }
                 StringBuilder dead = new StringBuilder();
@@ -152,17 +153,17 @@ public class MafiaBot extends TelegramLongPollingBot {
                         dead.append(player.getPlayerName()).append(": ").append(player.getRole()).append("\n");
                     }
                 }
-                new BotMessage(-364537563, dead.toString()).send();
+                new BotMessage(groupID, dead.toString()).send();
                 break;
 
             case "/deregister":
                 if (!(registerCheck(id))) {
-                    new BotMessage(-364537563, "Du bist gar nicht registriert!").send();
+                    new BotMessage(groupID, "Du bist gar nicht registriert!").send();
                     return;
                 }
                 for (Player player : players) {
                     if (player == getPlayerById(id)) {
-                        new BotMessage(-364537563, getPlayerById(id).getPlayerName() + " möchte doch nicht mitspielen, schade!").send();
+                        new BotMessage(groupID, getPlayerById(id).getPlayerName() + " möchte doch nicht mitspielen, schade!").send();
                         players.remove(player);
                     }
                 }
@@ -225,7 +226,7 @@ public class MafiaBot extends TelegramLongPollingBot {
 
             case "/forcedecision":
                 if (!gameRunning) {
-                    new BotMessage(-364537563, "Das Spiel läuft gar nicht!").send();
+                    new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                     return;
                 }
                 summarizeDay();
@@ -243,11 +244,11 @@ public class MafiaBot extends TelegramLongPollingBot {
 
         if (text.startsWith("/register")) {
             if (registerCheck(id)) {
-                new BotMessage(-364537563, "Du bist schon registriert!").send();
+                new BotMessage(groupID, "Du bist schon registriert!").send();
                 return;
             }
             if (text.equals("/register")) {
-                new BotMessage(-364537563, "Du musst mir schon einen Namen geben!").send();
+                new BotMessage(groupID, "Du musst mir schon einen Namen geben!").send();
                 return;
             }
             text = text.replace("/register ", "");
@@ -257,21 +258,21 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (text.startsWith("/deleterole")) {
             text = text.replace("/deleterole ", "");
             if (!(availableRoles.contains(text))) {
-                new BotMessage(-364537563, "Diese Rolle ist gar nicht aktiv. Achte bitte auf eine korrekte Schreibweise!").send();
+                new BotMessage(groupID, "Diese Rolle ist gar nicht aktiv. Achte bitte auf eine korrekte Schreibweise!").send();
                 return;
             }
             activeRoles.remove(text);
-            new BotMessage(-364537563, text + " wurde von den Rollen entfernt!").send();
+            new BotMessage(groupID, text + " wurde von den Rollen entfernt!").send();
         }
 
         if (text.startsWith("/addrole")) {
             text = text.replace("/addrole ", "");
             if (!(availableRoles.contains(text))) {
-                new BotMessage(-364537563, "Die Rolle gibt es nicht oder ist noch nicht implementiert. Achte bitte auf eine korrekte Schreibweise!").send();
+                new BotMessage(groupID, "Die Rolle gibt es nicht oder ist noch nicht implementiert. Achte bitte auf eine korrekte Schreibweise!").send();
                 return;
             }
             activeRoles.add(text);
-            new BotMessage(-364537563, text + " wurde zu den Rollen hinzugefügt!").send();
+            new BotMessage(groupID, text + " wurde zu den Rollen hinzugefügt!").send();
         }
 
         if (text.startsWith("/love")) {
@@ -441,7 +442,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 new BotMessage(id, "Diesen Spieler kenne ich gar nicht oder er ist schon tot. Probier es doch einfach nochmal!").send();
                 return;
             }
-            new BotMessage(-364537563, "Der Terrorist hat sich soeben hochgesprengt und er nimmt mit sich: " + terroredPlayer + " (" + getRoleByPlayerName(terroredPlayer) + ")").send();
+            new BotMessage(groupID, "Der Terrorist hat sich soeben hochgesprengt und er nimmt mit sich: " + terroredPlayer + " (" + getRoleByPlayerName(terroredPlayer) + ")").send();
             livingPlayers.removeIf(s -> s.getPlayerName().equals(terroredPlayer) || s.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName()));
             for (Player player : livingPlayers) {
                 if ((player.getPlayerName().equals(terroredPlayer)) || (player.getPlayerName().equals(getPlayerByRole("Terrorist").getPlayerName()))) {
@@ -453,14 +454,14 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (text.startsWith("/vote")) {
             if (dayLogicCheck(id)) return;
             if (getPlayerById(id).getHasVoted()) {
-                new BotMessage(-364537563, "Du hast schon abgestimmt für " + getPlayerById(id).getHasVotedFor()).send();
+                new BotMessage(groupID, "Du hast schon abgestimmt für " + getPlayerById(id).getHasVotedFor()).send();
                 return;
             }
             text = text.replace("/vote ", "");
             for (Player livingPlayer : livingPlayers) {
                 if (livingPlayer.getPlayerName().equals(text)) {
                     if (!(nominated.contains(livingPlayer.getPlayerName()))) {
-                        new BotMessage(-364537563, "Der Spieler ist gar nicht nominiert oder ich kenne ihn gar nicht. Benutze dafür bitte /nominate NAME!").send();
+                        new BotMessage(groupID, "Der Spieler ist gar nicht nominiert oder ich kenne ihn gar nicht. Benutze dafür bitte /nominate NAME!").send();
                         return;
                     }
                     getPlayerById(id).setHasVotedFor(livingPlayer.getPlayerName());
@@ -468,14 +469,14 @@ public class MafiaBot extends TelegramLongPollingBot {
                     break;
                 }
             }
-            new BotMessage(-364537563, getPlayerById(id).getPlayerName() + " hat soeben abgestimmt für: " + getPlayerById(id).getHasVotedFor()).send();
+            new BotMessage(groupID, getPlayerById(id).getPlayerName() + " hat soeben abgestimmt für: " + getPlayerById(id).getHasVotedFor()).send();
             getPlayerByName(getPlayerById(id).getHasVotedFor()).incrVotesFor();
             checkAllHaveVoted();
         }
 
         if (text.startsWith("/nominate")) {
             if (!gameRunning) {
-                new BotMessage(-364537563, "Das Spiel läuft gar nicht!").send();
+                new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                 return;
             }
             if (!(livingPlayers.contains(getPlayerById(id)))) {
@@ -488,7 +489,7 @@ public class MafiaBot extends TelegramLongPollingBot {
             }
             text = text.replace("/nominate ", "");
             if (nominated.contains(text)) {
-                new BotMessage(-364537563, "Der Spieler ist bereits nominiert!").send();
+                new BotMessage(groupID, "Der Spieler ist bereits nominiert!").send();
                 return;
             }
             int tmp = nominated.size();
@@ -501,7 +502,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 new BotMessage(id, "Diesen Spieler kenne ich gar nicht oder er ist schon tot. Probier es doch einfach nochmal!").send();
                 return;
             }
-            new BotMessage(-364537563, getPlayerById(id).getPlayerName() + " hat soeben " + nominated.get(nominated.size() - 1) + " nominiert!").send();
+            new BotMessage(groupID, getPlayerById(id).getPlayerName() + " hat soeben " + nominated.get(nominated.size() - 1) + " nominiert!").send();
         }
 
         if (text.startsWith("/trip")) {
@@ -632,8 +633,8 @@ public class MafiaBot extends TelegramLongPollingBot {
         for (String nominate : nominated) {
             nominates.append(nominate).append(": ").append(getPlayerByName(nominate).getVotesFor()).append("\n");
         }
-        new BotMessage(-364537563, nominates.toString()).send();
-        new BotMessage(-364537563, "Getötet wird " + player.getPlayerName() + " (" + player.getRole() + ")").send();
+        new BotMessage(groupID, nominates.toString()).send();
+        new BotMessage(groupID, "Getötet wird " + player.getPlayerName() + " (" + player.getRole() + ")").send();
         removePlayer(player);
         if (livingPlayers.isEmpty()) {
             return;
@@ -652,7 +653,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (lovers.contains(player)) {
             lovers.remove(player);
             Player secondLover = lovers.get(0);
-            new BotMessage(-364537563, "Soeben ist noch jemand gestorben, denn " + player.getPlayerName() + " war verliebt mit " + secondLover.getPlayerName() + "!\nDamit geht auch von uns: " + secondLover.getPlayerName() + " (" + secondLover.getRole() + ")").send();
+            new BotMessage(groupID, "Soeben ist noch jemand gestorben, denn " + player.getPlayerName() + " war verliebt mit " + secondLover.getPlayerName() + "!\nDamit geht auch von uns: " + secondLover.getPlayerName() + " (" + secondLover.getRole() + ")").send();
             lovers.clear();
             removePlayer(secondLover);
             return;
@@ -662,7 +663,7 @@ public class MafiaBot extends TelegramLongPollingBot {
 
     private void checkVictory() {
         if (mafias.isEmpty()) {
-            new BotMessage(-364537563, "Alle Mafiosi sind tot, damit hat das Dorf gewonnen, herzlichen Glückwunsch!").send();
+            new BotMessage(groupID, "Alle Mafiosi sind tot, damit hat das Dorf gewonnen, herzlichen Glückwunsch!").send();
             for (Player villager : villagers) {
                 villager.incrPunkte();
             }
@@ -670,7 +671,7 @@ public class MafiaBot extends TelegramLongPollingBot {
             return;
         }
         if (villagers.isEmpty()) {
-            new BotMessage(-364537563, "Alle Dorfbewohner sind tot, damit hat die Mafia gewonnen, herzlichen Glückwunsch!").send();
+            new BotMessage(groupID, "Alle Dorfbewohner sind tot, damit hat die Mafia gewonnen, herzlichen Glückwunsch!").send();
             for (Player badGuy : badGuys) {
                 badGuy.incrPunkte();
             }
@@ -687,7 +688,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return;
             }
         }
-        new BotMessage(-364537563, "Alle noch lebenden Spieler gehören zum Team Liebespaar, damit hat die Liebe gewonnen, herzlichen Glückwunsch!").send();
+        new BotMessage(groupID, "Alle noch lebenden Spieler gehören zum Team Liebespaar, damit hat die Liebe gewonnen, herzlichen Glückwunsch!").send();
         for (Player lover : teamLove) {
             lover.incrPunkte();
         }
@@ -705,6 +706,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         targetPlayer = "";
         poisonedPlayer = "";
         trippedPlayer = "";
+        firstNight = true;
         amorHasDecided = false;
         hexeDecidedSaved = false;
         hexeDecidedPoisoned = false;
@@ -724,11 +726,11 @@ public class MafiaBot extends TelegramLongPollingBot {
     private void registerPlayer(String name, int id) {
         ArrayList temp = getPlayers();
         if (temp.contains(name)) {
-            new BotMessage(-364537563, "Der Spieler ist schon registriert!").send();
+            new BotMessage(groupID, "Der Spieler ist schon registriert!").send();
         } else {
             Player player = new Player(name, id);
             players.add(player);
-            new BotMessage(-364537563, player.getPlayerName() + " möchte mitspielen!").send();
+            new BotMessage(groupID, player.getPlayerName() + " möchte mitspielen!").send();
         }
     }
 
@@ -738,13 +740,13 @@ public class MafiaBot extends TelegramLongPollingBot {
         livingPlayers.addAll(players);
         Collections.shuffle(activeRoles);
         if (livingPlayers.size() != activeRoles.size()) {
-            new BotMessage(-364537563, "Die Anzahl der Spieler muss gleich der Anzahl der aktiven Rollen sein!").send();
+            new BotMessage(groupID, "Die Anzahl der Spieler muss gleich der Anzahl der aktiven Rollen sein!").send();
         } else {
             for (int i = 0; i < livingPlayers.size(); i++) {
                 livingPlayers.get(i).setRole(activeRoles.get(i));
                 new BotMessage(livingPlayers.get(i).getPlayerId(), "Du hast die Rolle: " + livingPlayers.get(i).getRole()).send();
             }
-            new BotMessage(-364537563, "Das Spiel hat begonnen. Ich habe jedem seine Rolle privat zugesendet! \nWir starten mit der ersten Nacht!").send();
+            new BotMessage(groupID, "Das Spiel hat begonnen. Ich habe jedem seine Rolle privat zugesendet! \nWir starten mit der ersten Nacht!").send();
         }
         if (activeRoles.contains("Hexe")) {
             for (Player livingPlayer : livingPlayers) {
@@ -803,7 +805,7 @@ public class MafiaBot extends TelegramLongPollingBot {
     }
 
     private void callAmor() {
-        if(trippedPlayer.equals(getPlayerByRole("Amor").getPlayerName())){
+        if (trippedPlayer.equals(getPlayerByRole("Amor").getPlayerName())) {
             return;
         }
         for (Player livingPlayer : livingPlayers) {
@@ -838,7 +840,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         }
         daytime = true;
         String tmp = getPlayerByRole("Drogendealer").getPlayerName();
-        new BotMessage(-364537563, "Es ist Nacht! Jeder schreibt mir jetzt bitte privat, was er diese Nacht tun möchte, wenn ich ihn dazu auffordere!").send();
+        new BotMessage(groupID, "Es ist Nacht! Jeder schreibt mir jetzt bitte privat, was er diese Nacht tun möchte, wenn ich ihn dazu auffordere!").send();
         if (livingPlayers.contains(getPlayerByName(tmp))) {
             new BotMessage(getPlayerByRole("Drogendealer").getPlayerId(), "Wen möchtest du diese Nacht auf Drogen setzen? Nutze dafür /trip NAME!").send();
         } else {
@@ -852,7 +854,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         }
         if (!(livingPlayers.contains(getPlayerByRole("Drogendealer")))) {
             daytime = true;
-            new BotMessage(-364537563, "Es ist Nacht! Jeder schreibt mir jetzt bitte privat, was er diese Nacht tun möchte, wenn ich ihn dazu auffordere!").send();
+            new BotMessage(groupID, "Es ist Nacht! Jeder schreibt mir jetzt bitte privat, was er diese Nacht tun möchte, wenn ich ihn dazu auffordere!").send();
         }
         for (Player livingPlayer : livingPlayers) {
             switch (livingPlayer.getRole()) {
@@ -902,19 +904,22 @@ public class MafiaBot extends TelegramLongPollingBot {
         daytime = false;
         hexeDecidedPoisoned = false;
         hexeDecidedSaved = false;
-        new BotMessage(-364537563, "Guten Morgen zu einem neuen Tag in unserem Dorf!").send();
-        //TODO: Leibwächter ist broke
-        if (!(poisonedPlayer.isEmpty()) || (!(targetPlayer.isEmpty()) && (!(protectedPlayer.isEmpty())))) {
-            ArrayList<String> tmpNames = new ArrayList<>();
-            if (!(poisonedPlayer.isEmpty())) {
-                tmpNames.add(poisonedPlayer);
-            }
-            if (protectedPlayer.isEmpty()) {
-                tmpNames.add(targetPlayer);
-            }
-            new BotMessage(-364537563, "Es gab in dieser Nacht Tote zu beklagen, gestorben sind:").send();
+        leibwaechterDecided = false;
+        mafiaDecided = false;
+        detektivDecided = false;
+        drogendealerDecided = false;
+        new BotMessage(groupID, "Guten Morgen zu einem neuen Tag in unserem Dorf!").send();
+        ArrayList<String> tmpNames = new ArrayList<>();
+        if (!poisonedPlayer.isEmpty()) {
+            tmpNames.add(poisonedPlayer);
+        }
+        if (!targetPlayer.isEmpty() && !targetPlayer.equals(protectedPlayer)) {
+            tmpNames.add(targetPlayer);
+        }
+        if (!tmpNames.isEmpty()) {
+            new BotMessage(groupID, "Es gab in dieser Nacht Tote zu beklagen, gestorben sind:").send();
             for (String tmpName : tmpNames) {
-                new BotMessage(-364537563, tmpName + " (" + getRoleByPlayerName(tmpName) + ")").send();
+                new BotMessage(groupID, tmpName + " (" + getRoleByPlayerName(tmpName) + ")").send();
                 for (Player player : livingPlayers) {
                     if (player.getPlayerName().equals(tmpName)) {
                         removePlayer(player);
@@ -925,7 +930,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 }
             }
         } else {
-            new BotMessage(-364537563, "Wir haben diese Nacht keine Toten zu beklagen!").send();
+            new BotMessage(groupID, "Wir haben diese Nacht keine Toten zu beklagen!").send();
         }
         protectedPlayer = "";
         revealedPlayer = "";
