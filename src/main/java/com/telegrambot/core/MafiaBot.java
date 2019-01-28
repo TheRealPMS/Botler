@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MafiaBot extends TelegramLongPollingBot {
 
-    private int groupID = -319166185;
+    private int groupID = -364537563;
     private ArrayList<Player> players = new ArrayList<>();
     private ArrayList<Player> livingPlayers = new ArrayList<>();
     private ArrayList<String> activeRoles = new ArrayList<>();
@@ -100,16 +100,16 @@ public class MafiaBot extends TelegramLongPollingBot {
 
             case "/candidate":
                 if (dayLogicCheck(id)) return;
-                if(!major.isEmpty()){
+                if (!major.isEmpty()) {
                     new BotMessage(id, "Wir haben doch schon einen Bürgermeister!").send();
                     return;
                 }
-                if(candidates.contains(getPlayerById(id).getPlayerName())){
+                if (candidates.contains(getPlayerById(id).getPlayerName())) {
                     new BotMessage(id, "Du hast dich schon zur Wahl auf den Posten des Bürgermeisters gestellt!").send();
                     return;
                 }
                 candidates.add(getPlayerById(id).getPlayerName());
-                new BotMessage(groupID, "Hat sich soeben zur Wahl auf den Posten des Bürgermeisters gestellt").send();
+                new BotMessage(groupID, getPlayerById(id).getPlayerName() + " hat sich soeben zur Wahl auf den Posten des Bürgermeisters gestellt").send();
                 break;
 
             case "/informdrogendealer":
@@ -184,6 +184,14 @@ public class MafiaBot extends TelegramLongPollingBot {
                 }
                 break;
 
+            case "/getcandidates":
+                StringBuilder candidateString = new StringBuilder();
+                for (String candidate : candidates) {
+                    candidateString.append(candidate).append(": ").append(getPlayerByName(candidate).getMajorVotesFor()).append("\n");
+                }
+                new BotMessage(groupID, "Das sind alle bisher Kandidierenden auf das Amt des Bürgermeisters und die Zahl der bisher für sie abgegebenen Stimmen: \n" + candidateString.toString()).send();
+                break;
+
             case "/save":
                 if (commandLogicCheck(id)) return;
                 if (!(getPlayerById(id).getRole().equals("Hexe"))) {
@@ -244,13 +252,24 @@ public class MafiaBot extends TelegramLongPollingBot {
                     new BotMessage(groupID, "Das Spiel läuft gar nicht!").send();
                     return;
                 }
-                summarizeDay();
+                int secondMostVoted;
+                ArrayList<Integer> voteNumbers = new ArrayList<>();
+                for (Player livingPlayer : livingPlayers) {
+                    voteNumbers.add(livingPlayer.getVotesFor());
+                }
+                voteNumbers.sort(Collections.reverseOrder());
+                voteNumbers.remove(0);
+                secondMostVoted = voteNumbers.get(0);
+                Player mostVotedPlayer = getMostVotedPlayer();
+                if (mostVotedPlayer.getVotesFor() == secondMostVoted) {
+                    summarizeDay(true);
+                } else {
+                    summarizeDay(false);
+                }
                 break;
         }
             /*
-            TODO: Amor und Drogendealer Problem lösen
-                  Abstimmung ist am Tag schon vorbei, wenn die Mehrheit abgestimmt hat testen
-                  Bürgermeister für Unentschieden
+            TODO: Amor und Drogendealer Problem lösen testen
                   Google Doc pflegen
                   Bot auf Server setzen
              */
@@ -466,7 +485,7 @@ public class MafiaBot extends TelegramLongPollingBot {
 
         if (text.startsWith("/vote")) {
             if (dayLogicCheck(id)) return;
-            if(major.isEmpty()){
+            if (major.isEmpty()) {
                 new BotMessage(id, "Lass uns doch erstmal einen Bürgermeister wählen!").send();
                 return;
             }
@@ -478,7 +497,7 @@ public class MafiaBot extends TelegramLongPollingBot {
             for (Player livingPlayer : livingPlayers) {
                 if (livingPlayer.getPlayerName().equals(text)) {
                     if (!(nominated.contains(livingPlayer.getPlayerName()))) {
-                        new BotMessage(groupID, "Der Spieler ist gar nicht nominiert oder ich kenne ihn gar nicht. Benutze dafür bitte /nominate NAME!").send();
+                        new BotMessage(groupID, "Der Spieler ist gar nicht nominiert. Benutze dafür bitte /nominate NAME!").send();
                         return;
                     }
                     getPlayerById(id).setHasVotedFor(livingPlayer.getPlayerName());
@@ -486,14 +505,18 @@ public class MafiaBot extends TelegramLongPollingBot {
                     break;
                 }
             }
+            if(getPlayerById(id).getHasVotedFor().isEmpty()){
+                new BotMessage(groupID, "Bitte schreib den Namen richtig, den kenne ich gar nicht, du retard!").send();
+                return;
+            }
             new BotMessage(groupID, getPlayerById(id).getPlayerName() + " hat soeben abgestimmt für: " + getPlayerById(id).getHasVotedFor()).send();
             getPlayerByName(getPlayerById(id).getHasVotedFor()).incrVotesFor();
             checkEnoughHaveVoted();
         }
 
-        if (text.startsWith("/votecandidate")) {
+        if (text.startsWith("/candidatevote")) {
             if (dayLogicCheck(id)) return;
-            if(!major.isEmpty()){
+            if (!major.isEmpty()) {
                 new BotMessage(id, "Wir haben doch schon einen Bürgermeister!").send();
                 return;
             }
@@ -501,7 +524,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 new BotMessage(groupID, "Du hast schon abgestimmt für " + getPlayerById(id).getHasVotedMajorFor()).send();
                 return;
             }
-            text = text.replace("/vote ", "");
+            text = text.replace("/candidatevote ", "");
             for (Player livingPlayer : livingPlayers) {
                 if (livingPlayer.getPlayerName().equals(text)) {
                     if (!(candidates.contains(livingPlayer.getPlayerName()))) {
@@ -531,7 +554,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 new BotMessage(id, "Warte bitte auf den Tag!").send();
                 return;
             }
-            if(major.isEmpty()){
+            if (major.isEmpty()) {
                 new BotMessage(id, "Lass uns doch erstmal einen Bürgermeister wählen!").send();
                 return;
             }
@@ -620,7 +643,10 @@ public class MafiaBot extends TelegramLongPollingBot {
         voteNumbers.remove(0);
         secondMostVoted = voteNumbers.get(0);
         Player player = getMostVotedMajor();
-        if ((player.getVotesFor() - secondMostVoted) > noVoteCount) {
+        if ((player.getMajorVotesFor() - secondMostVoted) > noVoteCount) {
+            summarizeMajorElection();
+        }
+        if (noVoteCount == 0) {
             summarizeMajorElection();
         }
     }
@@ -633,12 +659,14 @@ public class MafiaBot extends TelegramLongPollingBot {
         }
         new BotMessage(groupID, nominates.toString()).send();
         new BotMessage(groupID, "Unser neuer Bürgermeister ist " + player.getPlayerName() + ". Herzlichen Glückwunsch!").send();
+        new BotMessage(groupID, "Damit ist die Abstimmung eröffnet!").send();
         major = player.getPlayerName();
         for (Player tmp : players) {
             tmp.resetMajorVotesFor();
             tmp.setHasVotedMajor(false);
             tmp.setHasVotedMajorFor("");
         }
+        candidates.clear();
     }
 
     private Player getMostVotedMajor() {
@@ -721,17 +749,27 @@ public class MafiaBot extends TelegramLongPollingBot {
         secondMostVoted = voteNumbers.get(0);
         Player mostVotedPlayer = getMostVotedPlayer();
         if ((mostVotedPlayer.getVotesFor() - secondMostVoted) > noVoteCount) {
-            summarizeDay();
+            summarizeDay(false);
+            return;
+        }
+        if (noVoteCount == 0) {
+            summarizeDay(true);
         }
     }
 
-    private void summarizeDay() {
+    private void summarizeDay(Boolean equal) {
         Player player = getMostVotedPlayer();
+        if (equal) {
+            player = getPlayerByName(getPlayerByName(major).getHasVotedFor());
+        }
         StringBuilder nominates = new StringBuilder("Die Abstimmung ist entschieden. Die Nominierten und Stimmen im Überblick: \n");
         for (String nominate : nominated) {
             nominates.append(nominate).append(": ").append(getPlayerByName(nominate).getVotesFor()).append("\n");
         }
         new BotMessage(groupID, nominates.toString()).send();
+        if (equal) {
+            new BotMessage(groupID, "Bei dieser Abstimmung gab es einen Gleichstand, also entscheidet die Stimme des Bürgermeisters!").send();
+        }
         new BotMessage(groupID, "Getötet wird " + player.getPlayerName() + " (" + player.getRole() + ")").send();
         if (!badGuys.contains(player)) {
             new BotMessage(groupID, "Könnt ihr eigentlich irgendwas?").send();
@@ -763,6 +801,9 @@ public class MafiaBot extends TelegramLongPollingBot {
         livingPlayers.remove(player);
         mafias.remove(player);
         villagers.remove(player);
+        if (major.equals(player.getPlayerName())) {
+            major = "";
+        }
         if (lovers.contains(player)) {
             lovers.remove(player);
             Player secondLover = lovers.get(0);
@@ -814,6 +855,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         badGuys.clear();
         lovers.clear();
         villagers.clear();
+        major = "";
         protectedPlayer = "";
         revealedPlayer = "";
         targetPlayer = "";
@@ -1052,7 +1094,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         trippedPlayer = "";
         checkVictory();
         if (major.isEmpty() && gameRunning) {
-            new BotMessage(groupID, "Als ersten brauchen wir einen Bürgermeister! Wer sich selbst zur Wahl stellen möchte, nutzt bitte /candidate. Um für einen Kandidaten abzustimmen, nutzt bitte /votecandidate!").send();
+            new BotMessage(groupID, "Als ersten brauchen wir einen Bürgermeister! Wer sich selbst zur Wahl stellen möchte, nutzt bitte /candidate. Um für einen Kandidaten abzustimmen, nutzt bitte /candidatevote!").send();
         }
     }
 
