@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="Major is now working">
+    <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,16 +35,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="509" column="23" selection-start-line="509" selection-start-column="23" selection-end-line="509" selection-end-column="23" />
+            <state relative-caret-position="439">
+              <caret line="1167" column="27" lean-forward="true" selection-start-line="1167" selection-start-column="27" selection-end-line="1167" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#49666#49667#0" expanded="true" />
-                <element signature="e#49760#49761#0" expanded="true" />
-                <element signature="e#50135#50136#0" expanded="true" />
-                <element signature="e#50224#50225#0" expanded="true" />
-                <element signature="e#50313#50314#0" expanded="true" />
-                <element signature="e#50432#50433#0" expanded="true" />
+                <element signature="e#49377#49378#0" expanded="true" />
+                <element signature="e#49421#49422#0" expanded="true" />
+                <element signature="e#49465#49466#0" expanded="true" />
+                <element signature="e#49515#49516#0" expanded="true" />
+                <element signature="e#49856#49857#0" expanded="true" />
+                <element signature="e#49890#49891#0" expanded="true" />
+                <element signature="e#49942#49943#0" expanded="true" />
+                <element signature="e#49979#49980#0" expanded="true" />
+                <element signature="e#50031#50032#0" expanded="true" />
+                <element signature="e#50068#50069#0" expanded="true" />
+                <element signature="e#50117#50118#0" expanded="true" />
+                <element signature="e#50187#50188#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="867">
               <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
               <folding>
                 <element signature="e#690#691#0" expanded="true" />
@@ -73,7 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ich werde dich</find>
       <find>callHexe</find>
       <find>/trip</find>
       <find>erste</find>
@@ -103,6 +110,7 @@
       <find>system</find>
       <find>major</find>
       <find>summarize</find>
+      <find>for</find>
     </findStrings>
     <replaceStrings>
       <replace>-364537563</replace>
@@ -150,7 +158,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,13 +218,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548433703998" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548775465156" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -359,7 +367,8 @@
       <workItem from="1548327869927" duration="1970000" />
       <workItem from="1548424451157" duration="6820000" />
       <workItem from="1548431401942" duration="2345000" />
-      <workItem from="1548687217295" duration="5092000" />
+      <workItem from="1548687217295" duration="5315000" />
+      <workItem from="1548768770567" duration="2256000" />
     </task>
     <task id="LOCAL-00001" summary="checkVictory after terror">
       <created>1547153259135</created>
@@ -431,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548433718061</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed minor voting error">
+      <created>1548692349128</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1548692349128</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -461,9 +477,9 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113116000" />
+    <option name="totallyTimeSpent" value="115595000" />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -476,7 +492,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26385927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -486,7 +502,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -564,7 +580,8 @@
     <MESSAGE value="Replaced all have voted with enough have voted check" />
     <MESSAGE value="Elect major implemented" />
     <MESSAGE value="Major is now working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major is now working" />
+    <MESSAGE value="Fixed minor voting error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed minor voting error" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/config/VideoSearchBotConfig.java" />
@@ -645,7 +662,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="867">
           <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding>
             <element signature="e#690#691#0" expanded="true" />
@@ -656,16 +673,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="509" column="23" selection-start-line="509" selection-start-column="23" selection-end-line="509" selection-end-column="23" />
+        <state relative-caret-position="439">
+          <caret line="1167" column="27" lean-forward="true" selection-start-line="1167" selection-start-column="27" selection-end-line="1167" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#49666#49667#0" expanded="true" />
-            <element signature="e#49760#49761#0" expanded="true" />
-            <element signature="e#50135#50136#0" expanded="true" />
-            <element signature="e#50224#50225#0" expanded="true" />
-            <element signature="e#50313#50314#0" expanded="true" />
-            <element signature="e#50432#50433#0" expanded="true" />
+            <element signature="e#49377#49378#0" expanded="true" />
+            <element signature="e#49421#49422#0" expanded="true" />
+            <element signature="e#49465#49466#0" expanded="true" />
+            <element signature="e#49515#49516#0" expanded="true" />
+            <element signature="e#49856#49857#0" expanded="true" />
+            <element signature="e#49890#49891#0" expanded="true" />
+            <element signature="e#49942#49943#0" expanded="true" />
+            <element signature="e#49979#49980#0" expanded="true" />
+            <element signature="e#50031#50032#0" expanded="true" />
+            <element signature="e#50068#50069#0" expanded="true" />
+            <element signature="e#50117#50118#0" expanded="true" />
+            <element signature="e#50187#50188#0" expanded="true" />
           </folding>
         </state>
       </provider>

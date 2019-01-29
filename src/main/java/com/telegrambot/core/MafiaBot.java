@@ -39,7 +39,6 @@ public class MafiaBot extends TelegramLongPollingBot {
     private Boolean gameRunning = false;
     private Boolean informDrogendealer = false;
     private Boolean informTerrorist = false;
-    private Boolean firstNight = true;
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -505,7 +504,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                     break;
                 }
             }
-            if(getPlayerById(id).getHasVotedFor().isEmpty()){
+            if (getPlayerById(id).getHasVotedFor().isEmpty()) {
                 new BotMessage(groupID, "Bitte schreib den Namen richtig, den kenne ich gar nicht, du retard!").send();
                 return;
             }
@@ -861,7 +860,6 @@ public class MafiaBot extends TelegramLongPollingBot {
         targetPlayer = "";
         poisonedPlayer = "";
         trippedPlayer = "";
-        firstNight = true;
         amorHasDecided = false;
         hexeDecidedSaved = false;
         hexeDecidedPoisoned = false;
@@ -904,12 +902,8 @@ public class MafiaBot extends TelegramLongPollingBot {
             new BotMessage(groupID, "Das Spiel hat begonnen. Ich habe jedem seine Rolle privat zugesendet! \nWir starten mit der ersten Nacht!").send();
         }
         if (activeRoles.contains("Hexe")) {
-            for (Player livingPlayer : livingPlayers) {
-                if (livingPlayer.getRole().equals("Hexe")) {
-                    livingPlayer.fillPotions();
-                    break;
-                }
-            }
+            Player temp = getPlayerByRole("Hexe");
+            temp.fillPotions();
         }
         for (Player livingPlayer : livingPlayers) {
             if (livingPlayer.getRole().equals("Mafia")) {
@@ -963,12 +957,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (trippedPlayer.equals(getPlayerByRole("Amor").getPlayerName())) {
             return;
         }
-        for (Player livingPlayer : livingPlayers) {
-            if (livingPlayer.getRole().equals("Amor")) {
-                new BotMessage(livingPlayer.getPlayerId(), "Wen möchtest du verlieben? Nutze dafür das Command /love NAME NAME").send();
-                break;
-            }
-        }
+        new BotMessage(getPlayerByRole("Amor").getPlayerId(), "Wen möchtest du verlieben? Nutze dafür das Command /love NAME NAME").send();
     }
 
     private void callHexe() {
@@ -1046,7 +1035,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                     }
                     break;
                 case "Amor":
-                    if (!amorHasDecided || firstNight) {
+                    if (!amorHasDecided) {
                         callAmor();
                     }
                     break;
@@ -1055,7 +1044,6 @@ public class MafiaBot extends TelegramLongPollingBot {
     }
 
     private void tag() {
-        firstNight = false;
         daytime = false;
         hexeDecidedPoisoned = false;
         hexeDecidedSaved = false;
