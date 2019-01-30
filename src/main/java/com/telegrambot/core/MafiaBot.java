@@ -51,6 +51,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         switch (text) {
             case "/nokill":
                 mafiaDecided = true;
+                new BotMessage(id, "Diese Nacht tötet die Mafia niemanden!").send();
                 checkReady();
                 break;
             case "/nacht":
@@ -771,7 +772,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         }
         new BotMessage(groupID, "Getötet wird " + player.getPlayerName() + " (" + player.getRole() + ")").send();
         if (!badGuys.contains(player)) {
-            new BotMessage(groupID, "Könnt ihr eigentlich irgendwas?").send();
+            new BotMessage(groupID, "Könnt ihr eigentlich irgendwas, ihr Kacknoobs?").send();
         }
         removePlayer(player);
         if (livingPlayers.isEmpty()) {
@@ -832,16 +833,16 @@ public class MafiaBot extends TelegramLongPollingBot {
             return;
         }
         for (Player villager : villagers) {
-            if (!(lovers.contains(villager))) {
+            if (!(teamLove.contains(villager))) {
                 return;
             }
         }
         for (Player badGuy : badGuys) {
-            if (!(lovers.contains(badGuy))) {
+            if (!(teamLove.contains(badGuy))) {
                 return;
             }
         }
-        new BotMessage(groupID, "Alle noch lebenden Spieler gehören zum Team Liebespaar, damit hat die Liebe gewonnen, herzlichen Glückwunsch!").send();
+        new BotMessage(groupID, "Alle noch lebenden Spieler gehören zum Team Liebe, damit hat die Liebe gewonnen, herzlichen Glückwunsch!").send();
         for (Player lover : teamLove) {
             lover.incrPunkte();
         }
@@ -854,6 +855,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         badGuys.clear();
         lovers.clear();
         villagers.clear();
+        teamLove.clear();
         major = "";
         protectedPlayer = "";
         revealedPlayer = "";
@@ -984,7 +986,9 @@ public class MafiaBot extends TelegramLongPollingBot {
         }
         daytime = true;
         String tmp = getPlayerByRole("Drogendealer").getPlayerName();
-        new BotMessage(groupID, "Es ist Nacht! Jeder schreibt mir jetzt bitte privat, was er diese Nacht tun möchte, wenn ich ihn dazu auffordere!").send();
+        if (livingPlayers.contains(getPlayerByRole("Drogendealer"))) {
+            new BotMessage(groupID, "Es ist Nacht! Jeder schreibt mir jetzt bitte privat, was er diese Nacht tun möchte, wenn ich ihn dazu auffordere!").send();
+        }
         if (livingPlayers.contains(getPlayerByName(tmp))) {
             new BotMessage(getPlayerByRole("Drogendealer").getPlayerId(), "Wen möchtest du diese Nacht auf Drogen setzen? Nutze dafür /trip NAME!").send();
         } else {
@@ -1051,6 +1055,9 @@ public class MafiaBot extends TelegramLongPollingBot {
         mafiaDecided = false;
         detektivDecided = false;
         drogendealerDecided = false;
+        if (teamLove.isEmpty()) {
+            amorHasDecided = false;
+        }
         new BotMessage(groupID, "Guten Morgen zu einem neuen Tag in unserem Dorf!").send();
         ArrayList<String> tmpNames = new ArrayList<>();
         if (!poisonedPlayer.isEmpty()) {
@@ -1082,7 +1089,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         trippedPlayer = "";
         checkVictory();
         if (major.isEmpty() && gameRunning) {
-            new BotMessage(groupID, "Als ersten brauchen wir einen Bürgermeister! Wer sich selbst zur Wahl stellen möchte, nutzt bitte /candidate. Um für einen Kandidaten abzustimmen, nutzt bitte /candidatevote!").send();
+            new BotMessage(groupID, "Als erstes brauchen wir einen Bürgermeister! Wer sich selbst zur Wahl stellen möchte, nutzt bitte /candidate. Um für einen Kandidaten abzustimmen, nutzt bitte /candidatevote!").send();
         }
     }
 
