@@ -15,10 +15,12 @@ public class MafiaBot extends TelegramLongPollingBot {
     private ArrayList<String> activeRoles = new ArrayList<>();
     static ArrayList<String> availableRoles = new ArrayList<>();
     private ArrayList<Player> villagers = new ArrayList<>();
+    private ArrayList<Player> goodGuys = new ArrayList<>();
     private ArrayList<Player> mafias = new ArrayList<>();
     private ArrayList<Player> badGuys = new ArrayList<>();
     private ArrayList<Player> lovers = new ArrayList<>();
     private ArrayList<Player> teamLove = new ArrayList<>();
+    private ArrayList<Player> teamLivingLove = new ArrayList<>();
     private ArrayList<String> nominated = new ArrayList<>();
     private ArrayList<String> candidates = new ArrayList<>();
     private String major = "";
@@ -39,6 +41,7 @@ public class MafiaBot extends TelegramLongPollingBot {
     private Boolean gameRunning = false;
     private Boolean informDrogendealer = false;
     private Boolean informTerrorist = false;
+    private Boolean firstNight = true;
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -269,8 +272,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 break;
         }
             /*
-            TODO: Amor und Drogendealer Problem lösen testen
-                  Google Doc pflegen
+            TODO: Google Doc pflegen
                   Bot auf Server setzen
              */
 
@@ -320,6 +322,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return;
             }
             teamLove.add(getPlayerById(id));
+            teamLivingLove.add(getPlayerById(id));
             text = text.replace("/love ", "");
             String[] loves = text.split("\\s+");
             if (loves[1].equals(loves[0])) {
@@ -331,6 +334,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                     if (livingPlayer.getPlayerName().equals(love)) {
                         lovers.add(livingPlayer);
                         teamLove.add(livingPlayer);
+                        teamLivingLove.add(livingPlayer);
                     }
                 }
             }
@@ -801,6 +805,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         livingPlayers.remove(player);
         mafias.remove(player);
         villagers.remove(player);
+        teamLivingLove.remove(player);
         if (major.equals(player.getPlayerName())) {
             major = "";
         }
@@ -816,10 +821,18 @@ public class MafiaBot extends TelegramLongPollingBot {
     }
 
     private void checkVictory() {
+        if(teamLivingLove.containsAll(livingPlayers)){
+            new BotMessage(groupID, "Alle noch lebenden Spieler gehören zum Team Liebe, damit hat die Liebe gewonnen, herzlichen Glückwunsch!").send();
+            for (Player lover : teamLove) {
+                lover.incrPunkte();
+            }
+            reset();
+            return;
+        }
         if (mafias.isEmpty()) {
             new BotMessage(groupID, "Alle Mafiosi sind tot, damit hat das Dorf gewonnen, herzlichen Glückwunsch!").send();
-            for (Player villager : villagers) {
-                villager.incrPunkte();
+            for (Player goodGuy : goodGuys) {
+                goodGuy.incrPunkte();
             }
             reset();
             return;
@@ -830,23 +843,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 badGuy.incrPunkte();
             }
             reset();
-            return;
         }
-        for (Player villager : villagers) {
-            if (!(teamLove.contains(villager))) {
-                return;
-            }
-        }
-        for (Player badGuy : badGuys) {
-            if (!(teamLove.contains(badGuy))) {
-                return;
-            }
-        }
-        new BotMessage(groupID, "Alle noch lebenden Spieler gehören zum Team Liebe, damit hat die Liebe gewonnen, herzlichen Glückwunsch!").send();
-        for (Player lover : teamLove) {
-            lover.incrPunkte();
-        }
-        reset();
     }
 
     private void reset() {
@@ -856,12 +853,14 @@ public class MafiaBot extends TelegramLongPollingBot {
         lovers.clear();
         villagers.clear();
         teamLove.clear();
+        teamLivingLove.clear();
         major = "";
         protectedPlayer = "";
         revealedPlayer = "";
         targetPlayer = "";
         poisonedPlayer = "";
         trippedPlayer = "";
+        firstNight = false;
         amorHasDecided = false;
         hexeDecidedSaved = false;
         hexeDecidedPoisoned = false;
@@ -921,6 +920,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         for (Player livingPlayer : livingPlayers) {
             if (!(livingPlayer.getRole().equals("Mafia")) && !(livingPlayer.getRole().equals("Terrorist")) && !(livingPlayer.getRole().equals("Drogendealer"))) {
                 villagers.add(livingPlayer);
+                goodGuys.add(livingPlayer);
             }
         }
         if (mafias.size() > 1) {
@@ -940,9 +940,6 @@ public class MafiaBot extends TelegramLongPollingBot {
         if (livingPlayers.contains(getPlayerByRole("Drogendealer"))) {
             vorNacht();
             return;
-        }
-        if (livingPlayers.contains(getPlayerByRole("Amor"))) {
-            callAmor();
         }
         nacht();
     }
@@ -1039,7 +1036,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                     }
                     break;
                 case "Amor":
-                    if (!amorHasDecided) {
+                    if (!amorHasDecided || firstNight) {
                         callAmor();
                     }
                     break;
@@ -1048,6 +1045,7 @@ public class MafiaBot extends TelegramLongPollingBot {
     }
 
     private void tag() {
+        firstNight = false;
         daytime = false;
         hexeDecidedPoisoned = false;
         hexeDecidedSaved = false;
