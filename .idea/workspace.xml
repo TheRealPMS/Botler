@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/MafiaBot.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MafiaBot.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -34,15 +34,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3457">
+            <state relative-caret-position="187">
               <caret line="274" column="18" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#49617#49618#0" expanded="true" />
                 <element signature="e#49661#49662#0" expanded="true" />
+                <element signature="e#49705#49706#0" expanded="true" />
                 <element signature="e#49755#49756#0" expanded="true" />
+                <element signature="e#50096#50097#0" expanded="true" />
                 <element signature="e#50130#50131#0" expanded="true" />
+                <element signature="e#50182#50183#0" expanded="true" />
                 <element signature="e#50219#50220#0" expanded="true" />
+                <element signature="e#50271#50272#0" expanded="true" />
                 <element signature="e#50308#50309#0" expanded="true" />
+                <element signature="e#50357#50358#0" expanded="true" />
                 <element signature="e#50427#50428#0" expanded="true" />
               </folding>
             </state>
@@ -52,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
+            <state relative-caret-position="1122">
               <caret line="110" selection-start-line="110" selection-end-line="110" />
             </state>
           </provider>
@@ -163,9 +169,9 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -234,6 +240,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.telegrambot.core" />
       <option name="MAIN_CLASS_NAME" value="com.telegrambot.core.BotMessageTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -248,6 +255,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.telegrambot.net" />
       <option name="MAIN_CLASS_NAME" value="com.telegrambot.net.HttpClientTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -299,6 +307,7 @@
       <workItem from="1548687217295" duration="5315000" />
       <workItem from="1548768770567" duration="2256000" />
       <workItem from="1548876316916" duration="5990000" />
+      <workItem from="1549989901018" duration="90000" />
     </task>
     <task id="LOCAL-00001" summary="checkVictory after terror">
       <created>1547153259135</created>
@@ -414,7 +423,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121585000" />
+    <option name="totallyTimeSpent" value="121675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,10 +435,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2677761" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2707889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -444,7 +452,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.30985916" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.30985916" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.3289689" />
@@ -536,13 +544,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/From.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Message.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Chat.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.telegram/telegrambots/4.1/ce37faceca166210ab9216d09d57f55f49141375/telegrambots-4.1-sources.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="304" selection-start-line="304" selection-end-line="304" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.telegram/telegrambots/4.1/ce37faceca166210ab9216d09d57f55f49141375/telegrambots-4.1-sources.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.java" />
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/function/Predicate.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -591,13 +593,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/telegrambot/core/BotMessageTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -605,17 +600,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telegrambot/core/MafiaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3457">
+        <state relative-caret-position="187">
           <caret line="274" column="18" selection-start-line="274" selection-start-column="18" selection-end-line="274" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#49617#49618#0" expanded="true" />
             <element signature="e#49661#49662#0" expanded="true" />
+            <element signature="e#49705#49706#0" expanded="true" />
             <element signature="e#49755#49756#0" expanded="true" />
+            <element signature="e#50096#50097#0" expanded="true" />
             <element signature="e#50130#50131#0" expanded="true" />
+            <element signature="e#50182#50183#0" expanded="true" />
             <element signature="e#50219#50220#0" expanded="true" />
+            <element signature="e#50271#50272#0" expanded="true" />
             <element signature="e#50308#50309#0" expanded="true" />
+            <element signature="e#50357#50358#0" expanded="true" />
             <element signature="e#50427#50428#0" expanded="true" />
           </folding>
         </state>
@@ -661,7 +669,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
