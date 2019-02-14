@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7b7cd4f0-1a1a-4825-9843-2e0bb2d66bf0" name="Default Changelist" comment="TeamLove winning should work now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/BotMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/MafiaBot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/core/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/telegrambot/net/HttpClient.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -198,8 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -246,6 +248,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,6 +404,7 @@
       <workItem from="1549989901018" duration="90000" />
       <workItem from="1549990028309" duration="142000" />
       <workItem from="1550054597986" duration="7000" />
+      <workItem from="1550174065083" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="checkVictory after terror">
       <created>1547153259135</created>
@@ -515,7 +520,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121824000" />
+    <option name="totallyTimeSpent" value="122423000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -528,8 +533,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27665246" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27985075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />

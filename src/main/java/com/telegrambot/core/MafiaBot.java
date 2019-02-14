@@ -349,7 +349,7 @@ public class MafiaBot extends TelegramLongPollingBot {
             }
             new BotMessage(id, tmps.toString() + " sind die Liebenden und wurden informiert!").send();
             for (Player player : lovers) {
-                new BotMessage(getPlayerByName(player.getPlayerName()).getPlayerId(), "Du wurdest soeben verliebt, das Liebespaar lautet: " + tmps.toString()).send();
+                new BotMessage(getPlayerByName(player.getPlayerName()).getPlayerId(), "Ein Geheimnis verrat ich dir, Amor hat dich im Visier. Und da gibt es noch was, das du wissen musst: Sein Pfeil fliegt zu auf deine Brust. Das Liebespaar lautet: " + tmps.toString()).send();
             }
             amorHasDecided = true;
             checkReady();
