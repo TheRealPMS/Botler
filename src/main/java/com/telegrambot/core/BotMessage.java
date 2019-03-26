@@ -8,7 +8,7 @@ public class BotMessage {
     private final int chat_id;
     private final String text;
 
-    public BotMessage(int chat_id, String text) {
+    BotMessage(int chat_id, String text) {
         this.chat_id = chat_id;
         this.text = text;
     }
@@ -21,7 +21,7 @@ public class BotMessage {
         return text;
     }
 
-    public void send() {
+    void send() {
         HttpClient.POST(TELEGRAM_RESOURCE + "/sendMessage", this);
     }
 }

@@ -821,7 +821,7 @@ public class MafiaBot extends TelegramLongPollingBot {
     }
 
     private void checkVictory() {
-        if(teamLivingLove.containsAll(livingPlayers)){
+        if (teamLivingLove.containsAll(livingPlayers)) {
             new BotMessage(groupID, "Alle noch lebenden Spieler gehören zum Team Liebe, damit hat die Liebe gewonnen, herzlichen Glückwunsch!").send();
             for (Player lover : teamLove) {
                 lover.incrPunkte();
@@ -854,19 +854,28 @@ public class MafiaBot extends TelegramLongPollingBot {
         villagers.clear();
         teamLove.clear();
         teamLivingLove.clear();
+        amorHasDecided = false;
         major = "";
         protectedPlayer = "";
         revealedPlayer = "";
         targetPlayer = "";
         poisonedPlayer = "";
         trippedPlayer = "";
+        resetDuplicated();
+    }
+
+    private void resetDuplicated() {
+        detektivDecided = false;
+        drogendealerDecided = false;
+        mafiaDecided = false;
         firstNight = false;
-        amorHasDecided = false;
+
         hexeDecidedSaved = false;
         hexeDecidedPoisoned = false;
         daytime = false;
         gameRunning = false;
     }
+
 
     @Override
     public void onUpdatesReceived(List<Update> updates) {
@@ -895,13 +904,13 @@ public class MafiaBot extends TelegramLongPollingBot {
         Collections.shuffle(activeRoles);
         if (livingPlayers.size() != activeRoles.size()) {
             new BotMessage(groupID, "Die Anzahl der Spieler muss gleich der Anzahl der aktiven Rollen sein!").send();
-        } else {
-            for (int i = 0; i < livingPlayers.size(); i++) {
-                livingPlayers.get(i).setRole(activeRoles.get(i));
-                new BotMessage(livingPlayers.get(i).getPlayerId(), "Du hast die Rolle: " + livingPlayers.get(i).getRole()).send();
-            }
-            new BotMessage(groupID, "Das Spiel hat begonnen. Ich habe jedem seine Rolle privat zugesendet! \nWir starten mit der ersten Nacht!").send();
+            return;
         }
+        for (int i = 0; i < livingPlayers.size(); i++) {
+            livingPlayers.get(i).setRole(activeRoles.get(i));
+            new BotMessage(livingPlayers.get(i).getPlayerId(), "Du hast die Rolle: " + livingPlayers.get(i).getRole()).send();
+        }
+        new BotMessage(groupID, "Das Spiel hat begonnen. Ich habe jedem seine Rolle privat zugesendet! \nWir starten mit der ersten Nacht!").send();
         if (activeRoles.contains("Hexe")) {
             Player temp = getPlayerByRole("Hexe");
             temp.fillPotions();
@@ -1045,14 +1054,7 @@ public class MafiaBot extends TelegramLongPollingBot {
     }
 
     private void tag() {
-        firstNight = false;
-        daytime = false;
-        hexeDecidedPoisoned = false;
-        hexeDecidedSaved = false;
-        leibwaechterDecided = false;
-        mafiaDecided = false;
-        detektivDecided = false;
-        drogendealerDecided = false;
+        resetDuplicated();
         if (teamLove.isEmpty()) {
             amorHasDecided = false;
         }
@@ -1113,7 +1115,8 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return player.getPlayerId();
             }
         }
-        return 0;
+        new BotMessage(groupID, "NullPointerException in getIdByRole geworfen! Da ist irgendwas schief gegangen..").send();
+        throw new NullPointerException("Tried to get a player who doesn't exist");
     }
 
     private Player getPlayerById(int id) {
@@ -1122,7 +1125,8 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return player;
             }
         }
-        return new Player("FehlerInGetPlayerById", 1234567890);
+        new BotMessage(groupID, "NullPointerException in getPlayerById geworfen! Da ist irgendwas schief gegangen..").send();
+        throw new NullPointerException("Tried to get a player who doesn't exist");
     }
 
     private Player getPlayerByName(String name) {
@@ -1131,7 +1135,8 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return player;
             }
         }
-        return new Player("FehlerInGetPlayerByName", 1234567890);
+        new BotMessage(groupID, "NullPointerException in getPlayerByName geworfen! Da ist irgendwas schief gegangen..").send();
+        throw new NullPointerException("Tried to get a player who doesn't exist");
     }
 
     private Player getPlayerByRole(String role) {
@@ -1140,7 +1145,8 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return player;
             }
         }
-        return new Player("FehlerInGetPlayerByRole", 1234567890);
+        new BotMessage(groupID, "NullPointerException in getPlayerByRole geworfen! Da ist irgendwas schief gegangen..").send();
+        throw new NullPointerException("Tried to get a player who doesn't exist");
     }
 
     private String getRoleByPlayerName(String name) {
@@ -1149,7 +1155,8 @@ public class MafiaBot extends TelegramLongPollingBot {
                 return player.getRole();
             }
         }
-        return "";
+        new BotMessage(groupID, "NullPointerException in getRoleByPlayerName geworfen! Da ist irgendwas schief gegangen..").send();
+        throw new NullPointerException("Tried to get a player who doesn't exist");
     }
 
     private ArrayList getPlayers() {
