@@ -271,10 +271,6 @@ public class MafiaBot extends TelegramLongPollingBot {
                 }
                 break;
         }
-            /*
-            TODO: Google Doc pflegen
-                  Bot auf Server setzen
-             */
 
         if (text.startsWith("/register")) {
             if (registerCheck(id)) {
