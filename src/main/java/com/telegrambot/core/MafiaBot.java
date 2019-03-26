@@ -493,7 +493,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 new BotMessage(id, "Lass uns doch erstmal einen Bürgermeister wählen!").send();
                 return;
             }
-            if (getPlayerById(id).getHasVoted()) {
+            if (!getPlayerById(id).getHasVotedFor().isEmpty()) {
                 new BotMessage(groupID, "Du hast schon abgestimmt für " + getPlayerById(id).getHasVotedFor()).send();
                 return;
             }
@@ -505,7 +505,6 @@ public class MafiaBot extends TelegramLongPollingBot {
                         return;
                     }
                     getPlayerById(id).setHasVotedFor(livingPlayer.getPlayerName());
-                    getPlayerById(id).setHasVoted(true);
                     break;
                 }
             }
@@ -524,7 +523,7 @@ public class MafiaBot extends TelegramLongPollingBot {
                 new BotMessage(id, "Wir haben doch schon einen Bürgermeister!").send();
                 return;
             }
-            if (getPlayerById(id).getHasVotedMajor()) {
+            if (!getPlayerById(id).getHasVotedMajorFor().isEmpty()) {
                 new BotMessage(groupID, "Du hast schon abgestimmt für " + getPlayerById(id).getHasVotedMajorFor()).send();
                 return;
             }
@@ -536,7 +535,6 @@ public class MafiaBot extends TelegramLongPollingBot {
                         return;
                     }
                     getPlayerById(id).setHasVotedMajorFor(livingPlayer.getPlayerName());
-                    getPlayerById(id).setHasVotedMajor(true);
                     break;
                 }
             }
@@ -667,7 +665,6 @@ public class MafiaBot extends TelegramLongPollingBot {
         major = player.getPlayerName();
         for (Player tmp : players) {
             tmp.resetMajorVotesFor();
-            tmp.setHasVotedMajor(false);
             tmp.setHasVotedMajorFor("");
         }
         candidates.clear();
@@ -785,7 +782,6 @@ public class MafiaBot extends TelegramLongPollingBot {
         nominated.clear();
         for (Player tmp : players) {
             tmp.resetVotesFor();
-            tmp.setHasVoted(false);
             tmp.setHasVotedFor("");
         }
         vorNacht();

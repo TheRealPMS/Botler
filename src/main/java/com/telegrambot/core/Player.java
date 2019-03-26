@@ -9,9 +9,7 @@ class Player {
     private Boolean todestrank = false;
     private int punkte;
     private int playerId;
-    private Boolean hasVoted = false;
     private String hasVotedFor = "";
-    private Boolean hasVotedMajor = false;
     private String hasVotedMajorFor = "";
     private int votesFor;
     private int majorVotesFor;
@@ -45,24 +43,12 @@ class Player {
         this.votesFor = 0;
     }
 
-    Boolean getHasVotedMajor() {
-        return hasVotedMajor;
-    }
-
     String getHasVotedMajorFor() {
         return hasVotedMajorFor;
     }
 
-    void setHasVotedMajor(Boolean hasVotedMajor) {
-        this.hasVotedMajor = hasVotedMajor;
-    }
-
     void setHasVotedMajorFor(String hasVotedMajorFor) {
         this.hasVotedMajorFor = hasVotedMajorFor;
-    }
-
-    Boolean getHasVoted() {
-        return hasVoted;
     }
 
     String getHasVotedFor() {
@@ -79,10 +65,6 @@ class Player {
 
     void setTodestrank() {
         this.todestrank = false;
-    }
-
-    void setHasVoted(Boolean hasVoted) {
-        this.hasVoted = hasVoted;
     }
 
     void setHasVotedFor(String hasVotedFor) {
