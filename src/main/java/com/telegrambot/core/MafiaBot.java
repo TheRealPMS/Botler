@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MafiaBot extends TelegramLongPollingBot {
 
-    private int groupID = -364537563;
+    private final int groupID = -364537563;
     private ArrayList<Player> players = new ArrayList<>();
     private ArrayList<Player> livingPlayers = new ArrayList<>();
     private ArrayList<String> activeRoles = new ArrayList<>();
@@ -37,7 +37,7 @@ public class MafiaBot extends TelegramLongPollingBot {
     private Boolean mafiaDecided = false;
     private Boolean detektivDecided = false;
     private Boolean drogendealerDecided = false;
-    private Boolean daytime = false; //false ist Tag, true ist Nacht
+    private Boolean daytime = true; //false ist Tag, true ist Nacht
     private Boolean gameRunning = false;
     private Boolean informDrogendealer = false;
     private Boolean informTerrorist = false;
@@ -847,6 +847,7 @@ public class MafiaBot extends TelegramLongPollingBot {
         teamLove.clear();
         teamLivingLove.clear();
         amorHasDecided = false;
+        daytime = true;
         major = "";
         protectedPlayer = "";
         revealedPlayer = "";
